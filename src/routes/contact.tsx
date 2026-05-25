@@ -3,18 +3,45 @@ import { useState } from "react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, Navigation } from "lucide-react";
+
+const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
+const PHONE_DISPLAY = "+33 4 90 33 17 49";
+const PHONE_TEL = "+33490331749";
+const EMAIL = "contact@traiteurdegarip.fr";
+const MAPS_QUERY = encodeURIComponent("Traiteur de Garip, 22 Rue Portail Matheron, 84000 Avignon");
+const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAPS_QUERY}`;
+const MAPS_EMBED = `https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`;
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Traiteur de Garip · Devis traiteur méditerranéen" },
-      { name: "description", content: "Contactez Traiteur de Garip pour un devis personnalisé. Traiteur mariage, événement, halal, casher, végétarien." },
+      { name: "description", content: "Contactez Traiteur de Garip à Avignon — 22 Rue Portail Matheron. Téléphone +33 4 90 33 17 49. Ouvert tous les jours 10h-21h. Devis traiteur méditerranéen, halal, casher." },
       { property: "og:title", content: "Contact — Traiteur de Garip" },
-      { property: "og:description", content: "Contactez-nous pour un devis sur mesure." },
+      { property: "og:description", content: "Traiteur à Avignon depuis 36 ans. Contactez-nous pour un devis personnalisé." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        name: "Traiteur de Garip",
+        telephone: "+33490331749",
+        email: "contact@traiteurdegarip.fr",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "22 Rue Portail Matheron",
+          postalCode: "84000",
+          addressLocality: "Avignon",
+          addressCountry: "FR",
+        },
+        openingHours: "Mo-Su 10:00-21:00",
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "120" },
+      }),
+    }],
   }),
   component: ContactPage,
 });
@@ -99,14 +126,14 @@ function ContactPage() {
 
               <InfoLine icon={Phone} label="Téléphone" value="+33 1 23 45 67 89" />
               <InfoLine icon={Mail} label="Email" value="contact@traiteurdegarip.fr" />
-              <InfoLine icon={MapPin} label="Adresse" value="Région parisienne · Service traiteur extérieur" />
+              <InfoLine icon={MapPin} label="Adresse" value={ADDRESS} />
 
               <div className="flex gap-3 mt-8 pt-8 border-t border-primary-foreground/15">
                 <Clock className="text-gold mt-1" size={18} strokeWidth={1.5} />
                 <div>
                   <p className="text-xs tracking-[0.2em] uppercase text-primary-foreground/60 mb-2">Horaires</p>
-                  <p className="text-sm">Lundi — Samedi · 9h00 — 19h00</p>
-                  <p className="text-sm text-primary-foreground/60">Dimanche sur rendez-vous</p>
+                  <p className="text-sm">Ouvert tous les jours · 10h00 — 21h00</p>
+                  <p className="text-sm text-primary-foreground/60">Avignon · Implantés depuis 36 ans</p>
                 </div>
               </div>
 
@@ -123,13 +150,43 @@ function ContactPage() {
               </div>
             </div>
 
-            {/* MAP */}
-            <div className="mt-6 aspect-[4/3] overflow-hidden border border-border">
+          </Reveal>
+        </div>
+      </section>
+
+      {/* NOUS TROUVER */}
+      <section className="bg-card border-t border-border py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+              <div>
+                <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Nous trouver</p>
+                <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
+                  Au cœur d'<em className="not-italic text-primary">Avignon</em>
+                </h2>
+                <p className="mt-6 text-muted-foreground text-lg max-w-lg">
+                  Implantés au {ADDRESS} depuis plus de 36 ans.
+                </p>
+              </div>
+              <a
+                href={MAPS_DIRECTIONS}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-xs tracking-[0.25em] uppercase hover:bg-accent transition-smooth shadow-soft self-start"
+              >
+                <Navigation size={14} /> Voir l'itinéraire
+              </a>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <div className="aspect-[16/9] overflow-hidden border border-border shadow-elegant">
               <iframe
-                title="Carte localisation Traiteur de Garip"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=2.224%2C48.815%2C2.469%2C48.902&layer=mapnik"
-                className="w-full h-full grayscale"
+                title="Carte Traiteur de Garip Avignon"
+                src={MAPS_EMBED}
+                className="w-full h-full"
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </Reveal>
