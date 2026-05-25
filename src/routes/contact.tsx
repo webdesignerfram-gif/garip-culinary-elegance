@@ -39,7 +39,7 @@ export const Route = createFileRoute("/contact")({
           addressCountry: "FR",
         },
         openingHours: "Mo-Su 10:00-21:00",
-        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "120" },
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.7", reviewCount: "103" },
       }),
     }],
   }),
