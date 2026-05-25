@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { Star, Award, Utensils, Sparkles, ArrowRight, MapPin, Navigation, Quote } from "lucide-react";
+import { Star, Award, Users, ShieldCheck, ArrowRight, MapPin, Navigation, Quote } from "lucide-react";
 import heroImg from "@/assets/hero-buffet.jpg";
 import gGrillades from "@/assets/gallery-grillades.jpg";
 import gMezze from "@/assets/gallery-mezze.jpg";
