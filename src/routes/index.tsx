@@ -122,7 +122,7 @@ function Index() {
               36 ans d'excellence <em className="not-italic text-gold">culinaire</em> méditerranéenne
             </h1>
             <p className="fade-up mt-8 max-w-xl text-primary-foreground/80 text-lg leading-relaxed" style={{ animationDelay: "200ms" }}>
-              De la cuisine turque aux saveurs libanaises, grecques et arméniennes — nous adaptons chaque menu à vos traditions, votre culture et tous les régimes alimentaires.
+              À Avignon depuis 1989. De la cuisine turque aux saveurs libanaises, grecques et arméniennes — nous adaptons chaque menu à vos traditions, votre culture et tous les régimes alimentaires.
             </p>
             <div className="fade-up mt-10 flex flex-wrap gap-4" style={{ animationDelay: "400ms" }}>
               <Link
