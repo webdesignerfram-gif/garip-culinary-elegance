@@ -72,24 +72,40 @@ const reviews = [
   {
     name: "Camille R.",
     event: "Mariage · Avignon",
-    text: "Un service irréprochable et des saveurs incroyables. Nos invités en parlent encore. Le buffet libanais a fait sensation.",
+    text: "Une expérience exceptionnelle pour notre mariage, des plats incroyables et un service irréprochable.",
   },
   {
     name: "Mehmet K.",
-    event: "Réception familiale",
-    text: "Une cuisine turque authentique, exactement comme à la maison. 36 ans d'expérience, ça se ressent dans chaque plat.",
+    event: "Événement privé",
+    text: "Des saveurs méditerranéennes authentiques et une équipe très professionnelle.",
   },
   {
     name: "Sophie L.",
-    event: "Événement d'entreprise",
-    text: "Professionnels, ponctuels et raffinés. Les mezze et les grillades ont impressionné toute notre équipe.",
+    event: "Client fidèle · Avignon",
+    text: "Le meilleur traiteur oriental et méditerranéen d'Avignon.",
   },
   {
     name: "Antoine D.",
-    event: "Baptême · Vaucluse",
-    text: "Menu vegan adapté avec soin, présentation élégante. Un traiteur de confiance à Avignon.",
+    event: "Réception d'entreprise · Vaucluse",
+    text: "Un buffet magnifique, varié et raffiné. Tous nos invités nous ont félicités pour le choix du traiteur.",
   },
 ];
+
+function RatingStars({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-0.5 ${className}`}>
+      {[1, 2, 3, 4].map((i) => (
+        <Star key={i} size={16} className="fill-current text-gold" strokeWidth={_T_} />
+      ))}
+      <div className="relative" style={{ width: 16, height: 16 }}>
+        <Star size={16} className="absolute inset-0 text-muted-foreground/30" strokeWidth={_T_} />
+        <div className="absolute inset-0 overflow-hidden" style={{ width: "70%" }}>
+          <Star size={16} className="fill-current text-gold" strokeWidth={_T_} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
 const MAPS_QUERY = encodeURIComponent("Traiteur de Garip, 22 Rue Portail Matheron, 84000 Avignon");
