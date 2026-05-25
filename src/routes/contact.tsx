@@ -216,13 +216,17 @@ function Field({ label, name, type = "text", required, placeholder }: { label: s
   );
 }
 
-function InfoLine({ icon: Icon, label, value }: { icon: typeof Phone; label: string; value: string }) {
+function InfoLine({ icon: Icon, label, value, href }: { icon: typeof Phone; label: string; value: string; href?: string }) {
   return (
     <div className="flex gap-3 mb-6">
       <Icon className="text-gold mt-1 flex-shrink-0" size={18} strokeWidth={1.5} />
       <div>
         <p className="text-xs tracking-[0.2em] uppercase text-primary-foreground/60 mb-1">{label}</p>
-        <p className="text-sm">{value}</p>
+        {href ? (
+          <a href={href} className="text-sm hover:text-gold transition-smooth">{value}</a>
+        ) : (
+          <p className="text-sm">{value}</p>
+        )}
       </div>
     </div>
   );
