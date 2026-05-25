@@ -66,6 +66,26 @@ function ContactPage() {
         </div>
       </section>
 
+      {/* BADGES DE CONFIANCE */}
+      <section className="bg-card border-y border-border">
+        <div className="mx-auto max-w-7xl px-6 md:px-12 py-12 grid grid-cols-2 md:grid-cols-4 gap-10">
+          {[
+            { icon: Star, value: "4,7 / 5", label: "Noté par nos clients" },
+            { icon: Award, value: "36 ans", label: "D'expérience" },
+            { icon: Users, value: "103+", label: "Avis clients" },
+            { icon: ShieldCheck, value: "Halal & Casher", label: "Cuisine certifiée" },
+          ].map((t, i) => (
+            <Reveal key={t.label} delay={i * 100}>
+              <div className="text-center md:text-left">
+                <t.icon className="text-primary mb-4 mx-auto md:mx-0" size={28} strokeWidth={1.2} />
+                <p className="font-display text-2xl md:text-3xl text-foreground">{t.value}</p>
+                <p className="mt-2 text-xs tracking-[0.15em] uppercase text-muted-foreground">{t.label}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* CONTACT BODY */}
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-12 grid lg:grid-cols-5 gap-16">
