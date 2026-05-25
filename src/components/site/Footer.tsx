@@ -11,7 +11,7 @@ export function Footer() {
               Traiteur <span className="text-gold italic">de Garip</span>
             </h3>
             <p className="mt-4 text-sm text-primary-foreground/70 leading-relaxed max-w-xs">
-              36 ans d'expérience au service de votre table. Spécialiste de la cuisine méditerranéenne et orientale.
+              36 ans d'expérience au service de votre table. Spécialiste de la cuisine méditerranéenne et orientale. Noté 4,7/5 par plus de 103 clients.
             </p>
           </div>
 
