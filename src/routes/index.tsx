@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
         },
         openingHours: "Mo-Su 10:00-21:00",
         areaServed: "Avignon, Vaucluse, Provence",
-        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "120" },
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.7", reviewCount: "103" },
       }),
     }],
   }),
