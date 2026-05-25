@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, Phone, Star, Award, Users, ShieldCheck } from "lucide-react";
 
 export function Footer() {
   return (
@@ -11,7 +11,7 @@ export function Footer() {
               Traiteur <span className="text-gold italic">de Garip</span>
             </h3>
             <p className="mt-4 text-sm text-primary-foreground/70 leading-relaxed max-w-xs">
-              36 ans d'expérience au service de votre table. Spécialiste de la cuisine méditerranéenne et orientale.
+              36 ans d'expérience au service de votre table. Spécialiste de la cuisine méditerranéenne et orientale. Noté 4,7/5 par plus de 103 clients.
             </p>
           </div>
 
@@ -40,7 +40,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-primary-foreground/50">
+        <div className="mt-12 flex flex-wrap justify-center gap-6 md:gap-10">
+          {[
+            { icon: Star, label: "4,7 / 5 — 103 avis clients" },
+            { icon: Award, label: "36 ans d'expérience" },
+            { icon: ShieldCheck, label: "Cuisine halal & casher" },
+            { icon: Users, label: "Traiteur premium à Avignon" },
+          ].map((b) => (
+            <div key={b.label} className="flex items-center gap-2 text-xs text-primary-foreground/60">
+              <b.icon size={14} className="text-gold" />
+              <span>{b.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-primary-foreground/50">
           <p>© {new Date().getFullYear()} Traiteur de Garip. Tous droits réservés.</p>
           <p>Cuisine méditerranéenne · turque · libanaise · grecque · arménienne</p>
         </div>

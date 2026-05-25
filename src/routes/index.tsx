@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { Star, Award, Utensils, Sparkles, ArrowRight, MapPin, Navigation, Quote } from "lucide-react";
+import { Star, Award, Users, ShieldCheck, ArrowRight, MapPin, Navigation, Quote } from "lucide-react";
 import heroImg from "@/assets/hero-buffet.jpg";
 import gGrillades from "@/assets/gallery-grillades.jpg";
 import gMezze from "@/assets/gallery-mezze.jpg";
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
         },
         openingHours: "Mo-Su 10:00-21:00",
         areaServed: "Avignon, Vaucluse, Provence",
-        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "120" },
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.7", reviewCount: "103" },
       }),
     }],
   }),
@@ -50,10 +50,10 @@ export const Route = createFileRoute("/")({
 });
 
 const trust = [
-  { icon: Star, value: "4,4 / 5", label: "Noté par nos clients" },
+  { icon: Star, value: "4,7 / 5", label: "Noté par nos clients" },
   { icon: Award, value: "36 ans", label: "D'expérience" },
-  { icon: Utensils, value: "5 cuisines", label: "Méditerranéennes & orientales" },
-  { icon: Sparkles, value: "Sur mesure", label: "Service traiteur personnalisé" },
+  { icon: Users, value: "103+", label: "Avis clients" },
+  { icon: ShieldCheck, value: "Halal & Casher", label: "Cuisine certifiée" },
 ];
 
 const gallery = [
@@ -72,24 +72,40 @@ const reviews = [
   {
     name: "Camille R.",
     event: "Mariage · Avignon",
-    text: "Un service irréprochable et des saveurs incroyables. Nos invités en parlent encore. Le buffet libanais a fait sensation.",
+    text: "Une expérience exceptionnelle pour notre mariage, des plats incroyables et un service irréprochable.",
   },
   {
     name: "Mehmet K.",
-    event: "Réception familiale",
-    text: "Une cuisine turque authentique, exactement comme à la maison. 36 ans d'expérience, ça se ressent dans chaque plat.",
+    event: "Événement privé",
+    text: "Des saveurs méditerranéennes authentiques et une équipe très professionnelle.",
   },
   {
     name: "Sophie L.",
-    event: "Événement d'entreprise",
-    text: "Professionnels, ponctuels et raffinés. Les mezze et les grillades ont impressionné toute notre équipe.",
+    event: "Client fidèle · Avignon",
+    text: "Le meilleur traiteur oriental et méditerranéen d'Avignon.",
   },
   {
     name: "Antoine D.",
-    event: "Baptême · Vaucluse",
-    text: "Menu vegan adapté avec soin, présentation élégante. Un traiteur de confiance à Avignon.",
+    event: "Réception d'entreprise · Vaucluse",
+    text: "Un buffet magnifique, varié et raffiné. Tous nos invités nous ont félicités pour le choix du traiteur.",
   },
 ];
+
+function RatingStars({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-0.5 ${className}`}>
+      {[1, 2, 3, 4].map((i) => (
+        <Star key={i} size={16} className="fill-current text-gold" strokeWidth={1.5} />
+      ))}
+      <div className="relative" style={{ width: 16, height: 16 }}>
+        <Star size={16} className="absolute inset-0 text-muted-foreground/30" strokeWidth={1.5} />
+        <div className="absolute inset-0 overflow-hidden" style={{ width: "70%" }}>
+          <Star size={16} className="fill-current text-gold" strokeWidth={1.5} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
 const MAPS_QUERY = encodeURIComponent("Traiteur de Garip, 22 Rue Portail Matheron, 84000 Avignon");
@@ -224,13 +240,11 @@ function Index() {
             <div className="text-center max-w-2xl mx-auto mb-16">
               <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Avis clients</p>
               <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
-                Noté <em className="not-italic text-primary">4,4 / 5</em><br />par nos clients
+                Noté <em className="not-italic text-primary">4,7 / 5</em><br />par nos clients
               </h2>
               <div className="mt-8 flex items-center justify-center gap-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={22} className="fill-current text-gold" strokeWidth={0} style={{ opacity: i <= 4 ? 1 : 0.45 }} />
-                ))}
-                <span className="ml-3 text-sm text-muted-foreground tracking-wide">120+ avis vérifiés</span>
+                <RatingStars />
+                <span className="ml-3 text-sm text-muted-foreground tracking-wide">Plus de 103 avis vérifiés</span>
               </div>
             </div>
           </Reveal>
@@ -242,10 +256,8 @@ function Index() {
                   <Quote className="text-primary/40" size={28} strokeWidth={1.2} />
                   <p className="mt-5 text-foreground leading-relaxed flex-1">"{r.text}"</p>
                   <div className="mt-6 pt-6 border-t border-border">
-                    <div className="flex gap-0.5 mb-2">
-                      {[1, 2, 3, 4, 5].map((s) => (
-                        <Star key={s} size={12} className="fill-current text-gold" strokeWidth={0} />
-                      ))}
+                    <div className="mb-2">
+                      <RatingStars />
                     </div>
                     <p className="font-display text-lg text-foreground">{r.name}</p>
                     <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground mt-1">{r.event}</p>
@@ -327,6 +339,38 @@ function Index() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* PARTENAIRES & CLIENTS */}
+      <section className="py-20 md:py-28 bg-card border-y border-border">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Ils nous font confiance</p>
+              <h2 className="font-display text-3xl md:text-5xl text-foreground text-balance leading-tight">
+                Partenaires & <em className="not-italic text-primary">clients</em>
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+            {[
+              { name: "Ville d'Avignon", sub: "Mairie & collectivités" },
+              { name: "Office du tourisme", sub: "Avignon Provence" },
+              { name: "Hôtel d'Europe", sub: "5 étoiles · Avignon" },
+              { name: "Palais des Papes", sub: "Monument historique" },
+              { name: "Château des Fines Roches", sub: "Réceptions & mariages" },
+              { name: "Château de la Barben", sub: "Événements prestige" },
+            ].map((p, i) => (
+              <Reveal key={p.name} delay={i * 80}>
+                <div className="bg-background border border-border px-6 py-8 text-center transition-smooth hover:border-primary hover:shadow-soft">
+                  <p className="font-display text-lg text-foreground leading-tight">{p.name}</p>
+                  <p className="mt-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground">{p.sub}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

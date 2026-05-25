@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, Navigation } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, Navigation, Star, Award, Users, ShieldCheck } from "lucide-react";
 
 const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
 const PHONE_DISPLAY = "+33 4 90 33 17 49";
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/contact")({
           addressCountry: "FR",
         },
         openingHours: "Mo-Su 10:00-21:00",
-        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "120" },
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.7", reviewCount: "103" },
       }),
     }],
   }),
@@ -63,6 +63,26 @@ function ContactPage() {
           <p className="fade-up mt-8 max-w-xl text-primary-foreground/75 text-lg" style={{ animationDelay: "200ms" }}>
             Une question, un devis, une idée — notre équipe vous répond avec soin.
           </p>
+        </div>
+      </section>
+
+      {/* BADGES DE CONFIANCE */}
+      <section className="bg-card border-y border-border">
+        <div className="mx-auto max-w-7xl px-6 md:px-12 py-12 grid grid-cols-2 md:grid-cols-4 gap-10">
+          {[
+            { icon: Star, value: "4,7 / 5", label: "Noté par nos clients" },
+            { icon: Award, value: "36 ans", label: "D'expérience" },
+            { icon: Users, value: "103+", label: "Avis clients" },
+            { icon: ShieldCheck, value: "Halal & Casher", label: "Cuisine certifiée" },
+          ].map((t, i) => (
+            <Reveal key={t.label} delay={i * 100}>
+              <div className="text-center md:text-left">
+                <t.icon className="text-primary mb-4 mx-auto md:mx-0" size={28} strokeWidth={1.2} />
+                <p className="font-display text-2xl md:text-3xl text-foreground">{t.value}</p>
+                <p className="mt-2 text-xs tracking-[0.15em] uppercase text-muted-foreground">{t.label}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -188,6 +208,34 @@ function ContactPage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SEO CONTACT */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="mx-auto max-w-4xl px-6 md:px-12 text-center">
+          <Reveal>
+            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-6">Traiteur à Avignon</p>
+            <h2 className="font-display text-3xl md:text-5xl text-foreground text-balance leading-tight">
+              Votre événement mérite <em className="not-italic text-primary">l'excellence</em>
+            </h2>
+            <div className="mt-10 mx-auto w-16 h-px bg-gradient-warm" />
+            <div className="mt-10 space-y-6 text-muted-foreground leading-relaxed text-lg text-left md:text-center">
+              <p>
+                Situé au <strong className="text-foreground">22 Rue Portail Matheron à Avignon</strong>,
+                Traiteur de Garip vous accompagne depuis plus de 36 ans dans l'organisation de vos
+                réceptions, mariages, baptêmes, anniversaires et événements d'entreprise.
+                Notre cuisine méditerranéenne, turque, libanaise, grecque et arménienne s'adapte
+                à tous les régimes alimentaires : <strong className="text-foreground">halal, casher, végétarien et vegan</strong>.
+              </p>
+              <p>
+                Contactez-nous par téléphone au <strong className="text-foreground">+33 4 90 33 17 49</strong>,
+                par email à <strong className="text-foreground">contact@traiteurdegarip.fr</strong>,
+                ou via notre formulaire de devis en ligne. Réponse personnalisée sous 24h ouvrées.
+                Service traiteur dans tout le Vaucluse, la Provence et la région PACA.
+              </p>
             </div>
           </Reveal>
         </div>
