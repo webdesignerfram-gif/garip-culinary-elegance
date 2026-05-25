@@ -124,9 +124,9 @@ function ContactPage() {
             <div className="bg-noir text-primary-foreground p-10">
               <h3 className="font-display text-2xl text-gold mb-8">Coordonnées</h3>
 
-              <InfoLine icon={Phone} label="Téléphone" value="+33 1 23 45 67 89" />
-              <InfoLine icon={Mail} label="Email" value="contact@traiteurdegarip.fr" />
-              <InfoLine icon={MapPin} label="Adresse" value={ADDRESS} />
+              <InfoLine icon={Phone} label="Téléphone" value={PHONE_DISPLAY} href={`tel:${PHONE_TEL}`} />
+              <InfoLine icon={Mail} label="Email" value={EMAIL} href={`mailto:${EMAIL}`} />
+              <InfoLine icon={MapPin} label="Adresse" value={ADDRESS} href={MAPS_DIRECTIONS} />
 
               <div className="flex gap-3 mt-8 pt-8 border-t border-primary-foreground/15">
                 <Clock className="text-gold mt-1" size={18} strokeWidth={1.5} />
