@@ -240,13 +240,11 @@ function Index() {
             <div className="text-center max-w-2xl mx-auto mb-16">
               <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Avis clients</p>
               <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
-                Noté <em className="not-italic text-primary">4,4 / 5</em><br />par nos clients
+                Noté <em className="not-italic text-primary">4,7 / 5</em><br />par nos clients
               </h2>
               <div className="mt-8 flex items-center justify-center gap-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={22} className="fill-current text-gold" strokeWidth={0} style={{ opacity: i <= 4 ? 1 : 0.45 }} />
-                ))}
-                <span className="ml-3 text-sm text-muted-foreground tracking-wide">120+ avis vérifiés</span>
+                <RatingStars />
+                <span className="ml-3 text-sm text-muted-foreground tracking-wide">Plus de 103 avis vérifiés</span>
               </div>
             </div>
           </Reveal>
@@ -258,10 +256,8 @@ function Index() {
                   <Quote className="text-primary/40" size={28} strokeWidth={1.2} />
                   <p className="mt-5 text-foreground leading-relaxed flex-1">"{r.text}"</p>
                   <div className="mt-6 pt-6 border-t border-border">
-                    <div className="flex gap-0.5 mb-2">
-                      {[1, 2, 3, 4, 5].map((s) => (
-                        <Star key={s} size={12} className="fill-current text-gold" strokeWidth={0} />
-                      ))}
+                    <div className="mb-2">
+                      <RatingStars />
                     </div>
                     <p className="font-display text-lg text-foreground">{r.name}</p>
                     <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground mt-1">{r.event}</p>
