@@ -213,6 +213,34 @@ function ContactPage() {
         </div>
       </section>
 
+      {/* SEO CONTACT */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="mx-auto max-w-4xl px-6 md:px-12 text-center">
+          <Reveal>
+            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-6">Traiteur à Avignon</p>
+            <h2 className="font-display text-3xl md:text-5xl text-foreground text-balance leading-tight">
+              Votre événement mérite <em className="not-italic text-primary">l'excellence</em>
+            </h2>
+            <div className="mt-10 mx-auto w-16 h-px bg-gradient-warm" />
+            <div className="mt-10 space-y-6 text-muted-foreground leading-relaxed text-lg text-left md:text-center">
+              <p>
+                Situé au <strong className="text-foreground">22 Rue Portail Matheron à Avignon</strong>,
+                Traiteur de Garip vous accompagne depuis plus de 36 ans dans l'organisation de vos
+                réceptions, mariages, baptêmes, anniversaires et événements d'entreprise.
+                Notre cuisine méditerranéenne, turque, libanaise, grecque et arménienne s'adapte
+                à tous les régimes alimentaires : <strong className="text-foreground">halal, casher, végétarien et vegan</strong>.
+              </p>
+              <p>
+                Contactez-nous par téléphone au <strong className="text-foreground">+33 4 90 33 17 49</strong>,
+                par email à <strong className="text-foreground">contact@traiteurdegarip.fr</strong>,
+                ou via notre formulaire de devis en ligne. Réponse personnalisée sous 24h ouvrées.
+                Service traiteur dans tout le Vaucluse, la Provence et la région PACA.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
