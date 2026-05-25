@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { Star, Award, Utensils, Sparkles, ArrowRight } from "lucide-react";
+import { Star, Award, Utensils, Sparkles, ArrowRight, MapPin, Navigation, Quote } from "lucide-react";
 import heroImg from "@/assets/hero-buffet.jpg";
 import gGrillades from "@/assets/gallery-grillades.jpg";
 import gMezze from "@/assets/gallery-mezze.jpg";
@@ -32,6 +32,16 @@ export const Route = createFileRoute("/")({
         name: "Traiteur de Garip",
         description: "Traiteur méditerranéen, turc, libanais, grec et arménien avec 36 ans d'expérience.",
         servesCuisine: ["Méditerranéenne", "Turque", "Libanaise", "Grecque", "Arménienne"],
+        telephone: "+33490331749",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "22 Rue Portail Matheron",
+          postalCode: "84000",
+          addressLocality: "Avignon",
+          addressCountry: "FR",
+        },
+        openingHours: "Mo-Su 10:00-21:00",
+        areaServed: "Avignon, Vaucluse, Provence",
         aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "120" },
       }),
     }],
@@ -57,6 +67,34 @@ const gallery = [
   { src: gFalafel, alt: "Falafels et sauces", tag: "Falafels & dips" },
   { src: gDolma, alt: "Feuilles de vigne", tag: "Buffets méditerranéens" },
 ];
+
+const reviews = [
+  {
+    name: "Camille R.",
+    event: "Mariage · Avignon",
+    text: "Un service irréprochable et des saveurs incroyables. Nos invités en parlent encore. Le buffet libanais a fait sensation.",
+  },
+  {
+    name: "Mehmet K.",
+    event: "Réception familiale",
+    text: "Une cuisine turque authentique, exactement comme à la maison. 36 ans d'expérience, ça se ressent dans chaque plat.",
+  },
+  {
+    name: "Sophie L.",
+    event: "Événement d'entreprise",
+    text: "Professionnels, ponctuels et raffinés. Les mezze et les grillades ont impressionné toute notre équipe.",
+  },
+  {
+    name: "Antoine D.",
+    event: "Baptême · Vaucluse",
+    text: "Menu vegan adapté avec soin, présentation élégante. Un traiteur de confiance à Avignon.",
+  },
+];
+
+const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
+const MAPS_QUERY = encodeURIComponent("Traiteur de Garip, 22 Rue Portail Matheron, 84000 Avignon");
+const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAPS_QUERY}`;
+const MAPS_EMBED = `https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`;
 
 function Index() {
   return (
@@ -84,7 +122,7 @@ function Index() {
               36 ans d'excellence <em className="not-italic text-gold">culinaire</em> méditerranéenne
             </h1>
             <p className="fade-up mt-8 max-w-xl text-primary-foreground/80 text-lg leading-relaxed" style={{ animationDelay: "200ms" }}>
-              De la cuisine turque aux saveurs libanaises, grecques et arméniennes — nous adaptons chaque menu à vos traditions, votre culture et tous les régimes alimentaires.
+              À Avignon depuis 1989. De la cuisine turque aux saveurs libanaises, grecques et arméniennes — nous adaptons chaque menu à vos traditions, votre culture et tous les régimes alimentaires.
             </p>
             <div className="fade-up mt-10 flex flex-wrap gap-4" style={{ animationDelay: "400ms" }}>
               <Link
@@ -176,6 +214,119 @@ function Index() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* AVIS CLIENTS */}
+      <section className="py-28 md:py-36 bg-background">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Avis clients</p>
+              <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
+                Noté <em className="not-italic text-primary">4,4 / 5</em><br />par nos clients
+              </h2>
+              <div className="mt-8 flex items-center justify-center gap-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} size={22} className="fill-current text-gold" strokeWidth={0} style={{ opacity: i <= 4 ? 1 : 0.45 }} />
+                ))}
+                <span className="ml-3 text-sm text-muted-foreground tracking-wide">120+ avis vérifiés</span>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {reviews.map((r, i) => (
+              <Reveal key={r.name} delay={(i % 4) * 100}>
+                <article className="bg-card border border-border p-8 h-full flex flex-col transition-smooth hover:border-primary hover:shadow-soft">
+                  <Quote className="text-primary/40" size={28} strokeWidth={1.2} />
+                  <p className="mt-5 text-foreground leading-relaxed flex-1">"{r.text}"</p>
+                  <div className="mt-6 pt-6 border-t border-border">
+                    <div className="flex gap-0.5 mb-2">
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <Star key={s} size={12} className="fill-current text-gold" strokeWidth={0} />
+                      ))}
+                    </div>
+                    <p className="font-display text-lg text-foreground">{r.name}</p>
+                    <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground mt-1">{r.event}</p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NOUS TROUVER */}
+      <section className="bg-card border-y border-border py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
+          <Reveal>
+            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Nous trouver</p>
+            <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
+              Au cœur d'<em className="not-italic text-primary">Avignon</em><br />depuis 36 ans
+            </h2>
+            <div className="mt-8 flex items-start gap-3 text-foreground">
+              <MapPin className="text-primary mt-1" size={20} strokeWidth={1.5} />
+              <p className="text-lg leading-relaxed">{ADDRESS}</p>
+            </div>
+            <p className="mt-6 text-muted-foreground leading-relaxed max-w-lg">
+              Notre maison vous accueille au 22 Rue Portail Matheron, à deux pas du centre historique d'Avignon. Service traiteur dans tout le Vaucluse et la Provence.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href={MAPS_DIRECTIONS}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-xs tracking-[0.25em] uppercase hover:bg-accent transition-smooth shadow-soft"
+              >
+                <Navigation size={14} /> Voir l'itinéraire
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 border border-foreground/20 text-foreground px-7 py-4 text-xs tracking-[0.25em] uppercase hover:border-primary hover:text-primary transition-smooth"
+              >
+                Nous contacter
+              </Link>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <div className="aspect-square overflow-hidden border border-border shadow-elegant">
+              <iframe
+                title="Carte Traiteur de Garip Avignon"
+                src={MAPS_EMBED}
+                className="w-full h-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* AVIGNON SEO */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="mx-auto max-w-4xl px-6 md:px-12 text-center">
+          <Reveal>
+            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-6">Avignon · Provence</p>
+            <h2 className="font-display text-3xl md:text-5xl text-foreground text-balance leading-tight">
+              Le savoir-faire méditerranéen,<br /><em className="not-italic text-primary">au cœur de la Provence</em>
+            </h2>
+            <div className="mt-10 mx-auto w-16 h-px bg-gradient-warm" />
+            <div className="mt-10 space-y-6 text-muted-foreground leading-relaxed text-lg text-left md:text-center">
+              <p>
+                Avignon, cité des Papes et carrefour culturel de la Provence, partage avec la Méditerranée une même
+                passion pour les produits du soleil : huile d'olive, herbes fraîches, légumes gorgés de lumière. C'est ici,
+                à quelques pas du Palais des Papes et du Pont d'Avignon, que <strong className="text-foreground">Traiteur de Garip</strong> a posé
+                ses fourneaux il y a plus de 36 ans.
+              </p>
+              <p>
+                Spécialiste de la cuisine turque, libanaise, grecque et arménienne en Vaucluse, notre maison
+                familiale conjugue savoir-faire oriental et produits provençaux pour des réceptions, mariages
+                et événements d'entreprise à Avignon, Carpentras, Orange, Châteauneuf-du-Pape et toute la région PACA.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
