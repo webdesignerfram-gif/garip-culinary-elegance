@@ -68,6 +68,34 @@ const gallery = [
   { src: gDolma, alt: "Feuilles de vigne", tag: "Buffets méditerranéens" },
 ];
 
+const reviews = [
+  {
+    name: "Camille R.",
+    event: "Mariage · Avignon",
+    text: "Un service irréprochable et des saveurs incroyables. Nos invités en parlent encore. Le buffet libanais a fait sensation.",
+  },
+  {
+    name: "Mehmet K.",
+    event: "Réception familiale",
+    text: "Une cuisine turque authentique, exactement comme à la maison. 36 ans d'expérience, ça se ressent dans chaque plat.",
+  },
+  {
+    name: "Sophie L.",
+    event: "Événement d'entreprise",
+    text: "Professionnels, ponctuels et raffinés. Les mezze et les grillades ont impressionné toute notre équipe.",
+  },
+  {
+    name: "Antoine D.",
+    event: "Baptême · Vaucluse",
+    text: "Menu vegan adapté avec soin, présentation élégante. Un traiteur de confiance à Avignon.",
+  },
+];
+
+const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
+const MAPS_QUERY = encodeURIComponent("Traiteur de Garip, 22 Rue Portail Matheron, 84000 Avignon");
+const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAPS_QUERY}`;
+const MAPS_EMBED = `https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`;
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
