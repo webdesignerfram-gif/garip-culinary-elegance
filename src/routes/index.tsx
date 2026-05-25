@@ -95,12 +95,12 @@ function RatingStars({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-0.5 ${className}`}>
       {[1, 2, 3, 4].map((i) => (
-        <Star key={i} size={16} className="fill-current text-gold" strokeWidth={_T_} />
+        <Star key={i} size={16} className="fill-current text-gold" strokeWidth={1.5} />
       ))}
       <div className="relative" style={{ width: 16, height: 16 }}>
-        <Star size={16} className="absolute inset-0 text-muted-foreground/30" strokeWidth={_T_} />
+        <Star size={16} className="absolute inset-0 text-muted-foreground/30" strokeWidth={1.5} />
         <div className="absolute inset-0 overflow-hidden" style={{ width: "70%" }}>
-          <Star size={16} className="fill-current text-gold" strokeWidth={_T_} />
+          <Star size={16} className="fill-current text-gold" strokeWidth={1.5} />
         </div>
       </div>
     </div>
