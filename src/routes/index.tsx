@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { Star, Award, Utensils, Sparkles, ArrowRight } from "lucide-react";
+import { Star, Award, Utensils, Sparkles, ArrowRight, MapPin, Navigation, Quote } from "lucide-react";
 import heroImg from "@/assets/hero-buffet.jpg";
 import gGrillades from "@/assets/gallery-grillades.jpg";
 import gMezze from "@/assets/gallery-mezze.jpg";
@@ -32,6 +32,16 @@ export const Route = createFileRoute("/")({
         name: "Traiteur de Garip",
         description: "Traiteur méditerranéen, turc, libanais, grec et arménien avec 36 ans d'expérience.",
         servesCuisine: ["Méditerranéenne", "Turque", "Libanaise", "Grecque", "Arménienne"],
+        telephone: "+33490331749",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "22 Rue Portail Matheron",
+          postalCode: "84000",
+          addressLocality: "Avignon",
+          addressCountry: "FR",
+        },
+        openingHours: "Mo-Su 10:00-21:00",
+        areaServed: "Avignon, Vaucluse, Provence",
         aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "120" },
       }),
     }],
