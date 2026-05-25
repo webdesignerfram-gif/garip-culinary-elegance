@@ -50,10 +50,10 @@ export const Route = createFileRoute("/")({
 });
 
 const trust = [
-  { icon: Star, value: "4,4 / 5", label: "Noté par nos clients" },
+  { icon: Star, value: "4,7 / 5", label: "Noté par nos clients" },
   { icon: Award, value: "36 ans", label: "D'expérience" },
-  { icon: Utensils, value: "5 cuisines", label: "Méditerranéennes & orientales" },
-  { icon: Sparkles, value: "Sur mesure", label: "Service traiteur personnalisé" },
+  { icon: Users, value: "103+", label: "Avis clients" },
+  { icon: ShieldCheck, value: "Halal & Casher", label: "Cuisine certifiée" },
 ];
 
 const gallery = [
