@@ -342,6 +342,38 @@ function Index() {
         </div>
       </section>
 
+      {/* PARTENAIRES & CLIENTS */}
+      <section className="py-20 md:py-28 bg-card border-y border-border">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Ils nous font confiance</p>
+              <h2 className="font-display text-3xl md:text-5xl text-foreground text-balance leading-tight">
+                Partenaires & <em className="not-italic text-primary">clients</em>
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+            {[
+              { name: "Ville d'Avignon", sub: "Mairie & collectivités" },
+              { name: "Office du tourisme", sub: "Avignon Provence" },
+              { name: "Hôtel d'Europe", sub: "5 étoiles · Avignon" },
+              { name: "Palais des Papes", sub: "Monument historique" },
+              { name: "Château des Fines Roches", sub: "Réceptions & mariages" },
+              { name: "Château de la Barben", sub: "Événements prestige" },
+            ].map((p, i) => (
+              <Reveal key={p.name} delay={i * 80}>
+                <div className="bg-background border border-border px-6 py-8 text-center transition-smooth hover:border-primary hover:shadow-soft">
+                  <p className="font-display text-lg text-foreground leading-tight">{p.name}</p>
+                  <p className="mt-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground">{p.sub}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-gradient-warm py-24 md:py-32 text-primary-foreground">
         <div className="mx-auto max-w-5xl px-6 md:px-12 text-center">
