@@ -2,15 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { Check, ArrowRight } from "lucide-react";
-import gShawarma from "@/assets/spec-shawarma.jpg";
-import gFalafel from "@/assets/spec-falafel.jpg";
-import gCouscous from "@/assets/spec-couscous.jpg";
-import gDolma from "@/assets/spec-dolma.jpg";
+import { Check, ArrowRight, ZoomIn, X } from "lucide-react";
+import { useState } from "react";
 import gMezze from "@/assets/gallery-mezze.jpg";
-import gBaklava from "@/assets/gallery-baklava.jpg";
-import gGrillades from "@/assets/gallery-grillades.jpg";
-import gGrecque from "@/assets/gallery-grecque.jpg";
+import photoKebabs from "@/assets/photo-kebabs.jpg";
+import photoPide from "@/assets/photo-pide.jpg";
+import photoMezzeLiban from "@/assets/photo-mezze-liban.jpg";
+import photoShawarma from "@/assets/photo-shawarma.jpg";
+import photoMoussaka from "@/assets/photo-moussaka.jpg";
+import photoSouvlaki from "@/assets/photo-souvlaki.jpg";
+import photoGrilladesArm from "@/assets/photo-grillades-arm.jpg";
+import photoLavash from "@/assets/photo-lavash.jpg";
+import photoPlateauMedit from "@/assets/photo-plateau-medit.jpg";
+import photoFruitsMer from "@/assets/photo-fruits-mer.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
