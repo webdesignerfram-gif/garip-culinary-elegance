@@ -284,51 +284,73 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* SPECIALTIES GRID */}
-      <section className="py-24 md:py-32">
+      {/* MENUS — CARTES */}
+      <section id="menus" className="py-24 md:py-32 bg-background">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-20">
-            {specialties.map((s, i) => (
-              <Reveal key={s.name} delay={(i % 2) * 100}>
-                <article className="group">
-                  <div className="overflow-hidden aspect-[5/4] mb-6">
-                    <img
-                      src={s.img}
-                      alt={s.name}
-                      loading="lazy"
-                      width={1024}
-                      height={820}
-                      className="w-full h-full object-cover transition-smooth group-hover:scale-105"
-                    />
-                  </div>
-                  <p className="text-xs tracking-[0.3em] uppercase text-primary mb-3">
-                    {String(i + 1).padStart(2, "0")} —
-                  </p>
-                  <h3 className="font-display text-3xl md:text-4xl text-foreground">{s.name}</h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed max-w-md">{s.desc}</p>
+          <Reveal>
+            <div className="max-w-3xl mb-16 md:mb-20">
+              <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Nos menus</p>
+              <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
+                Cinq cuisines,<br /><em className="not-italic text-primary">une seule passion</em>
+              </h2>
+              <p className="mt-6 text-muted-foreground leading-relaxed">
+                Découvrez nos cartes traditionnelles, transmises de génération en génération
+                et revisitées pour vos plus belles tables.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            {menus.map((m, i) => (
+              <Reveal key={m.cuisine} delay={(i % 2) * 120}>
+                <article
+                  className={`relative bg-card border border-border p-8 md:p-10 h-full shadow-elegant hover:shadow-2xl transition-smooth ${
+                    menus.length % 2 === 1 && i === menus.length - 1 ? "md:col-span-2" : ""
+                  }`}
+                >
+                  {/* corner ornaments */}
+                  <span className="absolute top-3 left-3 w-6 h-6 border-t border-l border-primary/40" />
+                  <span className="absolute top-3 right-3 w-6 h-6 border-t border-r border-primary/40" />
+                  <span className="absolute bottom-3 left-3 w-6 h-6 border-b border-l border-primary/40" />
+                  <span className="absolute bottom-3 right-3 w-6 h-6 border-b border-r border-primary/40" />
+
+                  <header className="text-center pb-6 border-b border-border/70">
+                    <p className="text-[10px] tracking-[0.4em] uppercase text-primary mb-3">
+                      Menu · {m.origin}
+                    </p>
+                    <h3 className="font-display text-3xl md:text-4xl text-foreground">{m.cuisine}</h3>
+                    <p className="mt-2 italic text-muted-foreground text-sm">{m.subtitle}</p>
+                  </header>
+
+                  <ul className="mt-6 space-y-4">
+                    {m.dishes.map((d) => (
+                      <li key={d.name} className="group/dish">
+                        <div className="flex items-baseline gap-3">
+                          <span className="font-display text-base md:text-lg text-foreground whitespace-nowrap">
+                            {d.name}
+                          </span>
+                          <span className="flex-1 border-b border-dotted border-border/70 translate-y-[-4px]" />
+                        </div>
+                        <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               </Reveal>
             ))}
           </div>
-
-          {/* Other items */}
-          <Reveal>
-            <div className="mt-24 border-t border-border pt-16">
-              <h3 className="font-display text-2xl md:text-3xl text-foreground mb-8">
-                Et aussi
-              </h3>
-              <ul className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4">
-                {others.map((o) => (
-                  <li key={o} className="flex items-start gap-3 text-sm text-foreground/80">
-                    <span className="text-primary mt-1">—</span>
-                    {o}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
         </div>
       </section>
+
+      {/* SÉPARATEUR */}
+      <div aria-hidden className="relative h-px bg-border">
+        <span className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 bg-background px-6 text-xs tracking-[0.4em] uppercase text-primary">
+          Galerie
+        </span>
+      </div>
+
+      {/* PHOTOS DES PLATS */}
+      <PhotoGallery />
 
       {/* PRICING NOTE */}
       <section className="bg-card border-y border-border py-20">
