@@ -163,26 +163,95 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
-const specialties = [
-  { name: "Shawarma", desc: "Mariné 24h, rôti à la broche, servi en plateau ou sandwich.", img: gShawarma },
-  { name: "Kebabs & grillades turques", desc: "Adana, Urfa, şiş — viandes nobles cuites au charbon.", img: gGrillades },
-  { name: "Mezze libanais", desc: "Houmous, moutabal, taboulé, kibbeh, feuilles de vigne.", img: gMezze },
-  { name: "Moussaka & spécialités grecques", desc: "Recettes traditionnelles d'Égée, à la fois généreuses et raffinées.", img: gGrecque },
-  { name: "Falafels & houmous", desc: "Croustillants, parfumés, accompagnés de tahini maison.", img: gFalafel },
-  { name: "Couscous & plats mijotés", desc: "Semoule légère, viandes confites, légumes de saison.", img: gCouscous },
-  { name: "Feuilles de vigne farcies", desc: "Dolma au riz, herbes fraîches et zeste de citron.", img: gDolma },
-  { name: "Baklava & pâtisseries orientales", desc: "Pistache, noix, miel — feuilletés cuits chaque matin.", img: gBaklava },
+type Menu = {
+  cuisine: string;
+  subtitle: string;
+  origin: string;
+  dishes: { name: string; desc: string }[];
+};
+
+const menus: Menu[] = [
+  {
+    cuisine: "Cuisine Méditerranéenne",
+    subtitle: "Le soleil dans l'assiette",
+    origin: "Côtes de la Méditerranée",
+    dishes: [
+      { name: "Fruits de mer méditerranéens", desc: "Gambas, poulpe, daurade — grillés à la plancha" },
+      { name: "Plateau de mezze", desc: "Sélection d'entrées froides et chaudes" },
+      { name: "Grillades de saison", desc: "Viandes et poissons au charbon de bois" },
+      { name: "Salades fraîches", desc: "Légumes du marché, huile d'olive, herbes" },
+      { name: "Couscous", desc: "Semoule légère, viandes confites, légumes" },
+      { name: "Pâtisseries orientales", desc: "Miel, pistache, fleur d'oranger" },
+    ],
+  },
+  {
+    cuisine: "Cuisine Turque",
+    subtitle: "Anatolie & Bosphore",
+    origin: "Istanbul · Gaziantep",
+    dishes: [
+      { name: "Kebabs", desc: "Adana, Urfa, şiş — grillés à la braise" },
+      { name: "Pide", desc: "Pain plat garni cuit au four à pierre" },
+      { name: "Köfte", desc: "Boulettes de viande aux épices" },
+      { name: "Lahmacun", desc: "Galette fine à la viande hachée et herbes" },
+      { name: "İskender Kebab", desc: "Doner sur pain pide, sauce tomate, yaourt" },
+      { name: "Börek", desc: "Feuilleté au fromage ou à la viande" },
+      { name: "Baklava", desc: "Feuilleté à la pistache et au miel" },
+    ],
+  },
+  {
+    cuisine: "Cuisine Libanaise",
+    subtitle: "Mezze & convivialité",
+    origin: "Beyrouth · Tripoli",
+    dishes: [
+      { name: "Houmous", desc: "Crème de pois chiches, tahini, citron" },
+      { name: "Taboulé", desc: "Persil, boulgour, tomate, menthe fraîche" },
+      { name: "Falafels", desc: "Croquettes de pois chiches aux herbes" },
+      { name: "Shawarma", desc: "Viande marinée, rôtie à la broche" },
+      { name: "Mezze libanais", desc: "Assortiment de spécialités à partager" },
+      { name: "Fattouche", desc: "Salade fraîche, pain croustillant, sumac" },
+      { name: "Kebbé", desc: "Croquette de boulgour et viande, frite ou crue" },
+    ],
+  },
+  {
+    cuisine: "Cuisine Grecque",
+    subtitle: "Égée & Cyclades",
+    origin: "Athènes · Crète",
+    dishes: [
+      { name: "Moussaka", desc: "Aubergines, viande, béchamel gratinée" },
+      { name: "Gyros", desc: "Viande rôtie en broche, pita, sauce tzatziki" },
+      { name: "Souvlaki", desc: "Brochettes marinées grillées" },
+      { name: "Tzatziki", desc: "Yaourt, concombre, ail, menthe" },
+      { name: "Dolmadakia", desc: "Feuilles de vigne farcies au riz" },
+      { name: "Spanakopita", desc: "Feuilleté aux épinards et feta" },
+    ],
+  },
+  {
+    cuisine: "Cuisine Arménienne",
+    subtitle: "Tradition millénaire",
+    origin: "Erevan · Caucase",
+    dishes: [
+      { name: "Lavash", desc: "Pain traditionnel cuit au tonir" },
+      { name: "Dolma", desc: "Feuilles de vigne ou légumes farcis" },
+      { name: "Grillades arméniennes (Khorovats)", desc: "Brochettes de viandes marinées au charbon" },
+      { name: "Manti", desc: "Petits raviolis à la viande, yaourt et ail" },
+      { name: "Brochettes traditionnelles", desc: "Bœuf, agneau, poulet, épices arméniennes" },
+    ],
+  },
 ];
 
-const others = [
-  "Taboulé frais",
-  "Plateaux de mezze",
-  "Grillades arméniennes",
-  "Fruits de mer méditerranéens",
-  "Salades fraîches de saison",
-  "Pains traditionnels (pita, lavash, pide)",
-  "Spécialités au charbon de bois",
-  "Desserts orientaux assortis",
+type Photo = { src: string; alt: string; cuisine: string; title: string };
+
+const photos: Photo[] = [
+  { src: photoPlateauMedit, alt: "Plateau méditerranéen", cuisine: "Méditerranéenne", title: "Plateau méditerranéen" },
+  { src: photoFruitsMer, alt: "Fruits de mer méditerranéens", cuisine: "Méditerranéenne", title: "Fruits de mer méditerranéens" },
+  { src: photoKebabs, alt: "Kebabs turcs grillés", cuisine: "Turque", title: "Kebabs" },
+  { src: photoPide, alt: "Pide turc au four à pierre", cuisine: "Turque", title: "Pide" },
+  { src: photoMezzeLiban, alt: "Mezze libanais à partager", cuisine: "Libanaise", title: "Mezze libanais" },
+  { src: photoShawarma, alt: "Shawarma libanais", cuisine: "Libanaise", title: "Shawarma" },
+  { src: photoMoussaka, alt: "Moussaka grecque traditionnelle", cuisine: "Grecque", title: "Moussaka" },
+  { src: photoSouvlaki, alt: "Souvlaki grec", cuisine: "Grecque", title: "Souvlaki" },
+  { src: photoGrilladesArm, alt: "Grillades arméniennes Khorovats", cuisine: "Arménienne", title: "Grillades arméniennes" },
+  { src: photoLavash, alt: "Pain lavash arménien", cuisine: "Arménienne", title: "Lavash" },
 ];
 
 const regimes = [
