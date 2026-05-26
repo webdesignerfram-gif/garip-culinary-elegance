@@ -401,3 +401,121 @@ function ServicesPage() {
     </div>
   );
 }
+
+function PhotoGallery() {
+  const [active, setActive] = useState<number | null>(null);
+  const current = active !== null ? photos[active] : null;
+
+  const close = () => setActive(null);
+  const prev = () => setActive((a) => (a === null ? null : (a - 1 + photos.length) % photos.length));
+  const next = () => setActive((a) => (a === null ? null : (a + 1) % photos.length));
+
+  return (
+    <section className="py-24 md:py-32 bg-card">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <Reveal>
+          <div className="max-w-3xl mb-14 md:mb-20">
+            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Galerie des plats</p>
+            <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
+              L'art de la table,<br /><em className="not-italic text-primary">en images</em>
+            </h2>
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Cliquez sur une photo pour l'agrandir.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {photos.map((p, i) => (
+            <Reveal key={p.src} delay={(i % 3) * 80}>
+              <button
+                type="button"
+                onClick={() => setActive(i)}
+                className="group relative block w-full overflow-hidden bg-noir aspect-[4/5] focus:outline-none focus:ring-2 focus:ring-primary"
+                aria-label={`Agrandir : ${p.title}`}
+              >
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  loading="lazy"
+                  width={1024}
+                  height={1280}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-noir/80 via-noir/10 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="flex items-center gap-2 bg-background/90 text-foreground px-5 py-3 text-[10px] tracking-[0.3em] uppercase">
+                    <ZoomIn size={14} /> Agrandir
+                  </span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-left">
+                  <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
+                    Cuisine {p.cuisine}
+                  </p>
+                  <p className="font-display text-2xl md:text-3xl text-primary-foreground">
+                    {p.title}
+                  </p>
+                </div>
+              </button>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      {/* LIGHTBOX */}
+      {current && (
+        <div
+          className="fixed inset-0 z-50 bg-noir/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10 animate-fade-in"
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+          aria-label={current.title}
+        >
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); close(); }}
+            className="absolute top-5 right-5 md:top-8 md:right-8 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+            aria-label="Fermer"
+          >
+            <X size={28} />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-primary-foreground/70 hover:text-primary-foreground text-3xl md:text-4xl px-3"
+            aria-label="Photo précédente"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-primary-foreground/70 hover:text-primary-foreground text-3xl md:text-4xl px-3"
+            aria-label="Photo suivante"
+          >
+            ›
+          </button>
+
+          <figure
+            className="relative max-w-5xl w-full animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={current.src}
+              alt={current.alt}
+              className="w-full h-auto max-h-[80vh] object-contain shadow-2xl"
+            />
+            <figcaption className="mt-5 text-center">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
+                Cuisine {current.cuisine}
+              </p>
+              <p className="font-display text-2xl md:text-3xl text-primary-foreground">
+                {current.title}
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      )}
+    </section>
+  );
+}
