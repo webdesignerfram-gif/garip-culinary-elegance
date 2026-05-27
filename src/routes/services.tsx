@@ -15,6 +15,46 @@ import photoGrilladesArm from "@/assets/photo-grillades-arm.jpg";
 import photoLavash from "@/assets/photo-lavash.jpg";
 import photoPlateauMedit from "@/assets/photo-plateau-medit.jpg";
 import photoFruitsMer from "@/assets/photo-fruits-mer.jpg";
+import dishCouscous from "@/assets/dish-couscous-royal.jpg";
+import dishGrilladesMedit from "@/assets/dish-grillades-medit.jpg";
+import dishSaladeGrecque from "@/assets/dish-salade-grecque.jpg";
+import dishCalamars from "@/assets/dish-calamars.jpg";
+import dishAubergines from "@/assets/dish-aubergines.jpg";
+import dishDorade from "@/assets/dish-dorade.jpg";
+import dishPaella from "@/assets/dish-paella.jpg";
+import dishCrevettes from "@/assets/dish-crevettes.jpg";
+import dishIskender from "@/assets/dish-iskender.jpg";
+import dishLahmacun from "@/assets/dish-lahmacun.jpg";
+import dishKofte from "@/assets/dish-kofte.jpg";
+import dishDoner from "@/assets/dish-doner.jpg";
+import dishBorek from "@/assets/dish-borek.jpg";
+import dishBaklava from "@/assets/dish-baklava.jpg";
+import dishKunefe from "@/assets/dish-kunefe.jpg";
+import dishGozleme from "@/assets/dish-gozleme.jpg";
+import dishHoumous from "@/assets/dish-houmous.jpg";
+import dishTaboule from "@/assets/dish-taboule.jpg";
+import dishFalafels from "@/assets/dish-falafels.jpg";
+import dishFattouche from "@/assets/dish-fattouche.jpg";
+import dishKebbe from "@/assets/dish-kebbe.jpg";
+import dishChichTaouk from "@/assets/dish-chich-taouk.jpg";
+import dishManakish from "@/assets/dish-manakish.jpg";
+import dishSambousek from "@/assets/dish-sambousek.jpg";
+import dishGyros from "@/assets/dish-gyros.jpg";
+import dishDolmadakia from "@/assets/dish-dolmadakia.jpg";
+import dishTzatziki from "@/assets/dish-tzatziki.jpg";
+import dishSpanakopita from "@/assets/dish-spanakopita.jpg";
+import dishPastitsio from "@/assets/dish-pastitsio.jpg";
+import dishKeftedes from "@/assets/dish-keftedes.jpg";
+import dishLoukoumades from "@/assets/dish-loukoumades.jpg";
+import dishPitaGrecque from "@/assets/dish-pita-grecque.jpg";
+import dishDolmaArm from "@/assets/dish-dolma-arm.jpg";
+import dishManti from "@/assets/dish-manti.jpg";
+import dishBasturma from "@/assets/dish-basturma.jpg";
+import dishGata from "@/assets/dish-gata.jpg";
+import dishKufta from "@/assets/dish-kufta.jpg";
+import dishTolma from "@/assets/dish-tolma.jpg";
+import dishMatnakash from "@/assets/dish-matnakash.jpg";
+import dishNazook from "@/assets/dish-nazook.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -308,19 +348,64 @@ const menus: Menu[] = [
   },
 ];
 
-type Photo = { src: string; alt: string; cuisine: string; title: string };
+type Specialty = { src: string; title: string; cuisine: string; desc: string };
 
-const photos: Photo[] = [
-  { src: photoPlateauMedit, alt: "Plateau méditerranéen", cuisine: "Méditerranéenne", title: "Plateau méditerranéen" },
-  { src: photoFruitsMer, alt: "Fruits de mer méditerranéens", cuisine: "Méditerranéenne", title: "Fruits de mer méditerranéens" },
-  { src: photoKebabs, alt: "Kebabs turcs grillés", cuisine: "Turque", title: "Kebabs" },
-  { src: photoPide, alt: "Pide turc au four à pierre", cuisine: "Turque", title: "Pide" },
-  { src: photoMezzeLiban, alt: "Mezze libanais à partager", cuisine: "Libanaise", title: "Mezze libanais" },
-  { src: photoShawarma, alt: "Shawarma libanais", cuisine: "Libanaise", title: "Shawarma" },
-  { src: photoMoussaka, alt: "Moussaka grecque traditionnelle", cuisine: "Grecque", title: "Moussaka" },
-  { src: photoSouvlaki, alt: "Souvlaki grec", cuisine: "Grecque", title: "Souvlaki" },
-  { src: photoGrilladesArm, alt: "Grillades arméniennes Khorovats", cuisine: "Arménienne", title: "Grillades arméniennes" },
-  { src: photoLavash, alt: "Pain lavash arménien", cuisine: "Arménienne", title: "Lavash" },
+const specialties: Specialty[] = [
+  // Méditerranéenne
+  { src: photoPlateauMedit, title: "Plateau de mezze", cuisine: "Méditerranéenne", desc: "Assortiment généreux de petites entrées chaudes et froides à partager." },
+  { src: dishCouscous, title: "Couscous royal", cuisine: "Méditerranéenne", desc: "Semoule fine, légumes mijotés et viandes grillées, bouillon parfumé." },
+  { src: photoFruitsMer, title: "Fruits de mer méditerranéens", cuisine: "Méditerranéenne", desc: "Sélection iodée du jour, citron, huile d'olive et herbes fraîches." },
+  { src: dishGrilladesMedit, title: "Grillades méditerranéennes", cuisine: "Méditerranéenne", desc: "Brochettes et viandes marinées aux herbes du soleil, cuites à la flamme." },
+  { src: dishSaladeGrecque, title: "Salade grecque", cuisine: "Méditerranéenne", desc: "Feta, olives kalamata, tomates juteuses et huile d'olive vierge." },
+  { src: dishCalamars, title: "Calamars grillés", cuisine: "Méditerranéenne", desc: "Calamars tendres au citron et persil, juste saisis à la plancha." },
+  { src: dishAubergines, title: "Aubergines grillées", cuisine: "Méditerranéenne", desc: "Fines tranches fondantes, yaourt, grenade et menthe fraîche." },
+  { src: dishDorade, title: "Dorade grillée", cuisine: "Méditerranéenne", desc: "Dorade royale entière, peau croustillante, citron et herbes." },
+  { src: dishPaella, title: "Paëlla méditerranéenne", cuisine: "Méditerranéenne", desc: "Riz safrané, fruits de mer généreux, cuisson lente en grande poêle." },
+  { src: dishCrevettes, title: "Crevettes grillées", cuisine: "Méditerranéenne", desc: "Crevettes royales à l'ail et persil, juste grillées et citronnées." },
+  // Turque
+  { src: dishIskender, title: "İskender Kebab", cuisine: "Turque", desc: "Fines tranches de viande sur pide, sauce tomate, yaourt et beurre fondu." },
+  { src: photoKebabs, title: "Adana Kebab", cuisine: "Turque", desc: "Brochette de viande hachée épicée, grillée au charbon de bois." },
+  { src: photoPide, title: "Pide", cuisine: "Turque", desc: "Pain en forme de barque garni, cuit au four à pierre." },
+  { src: dishLahmacun, title: "Lahmacun", cuisine: "Turque", desc: "Galette fine à la viande hachée épicée, persil et citron." },
+  { src: dishKofte, title: "Köfte", cuisine: "Turque", desc: "Boulettes de viande aux épices, grillées et servies avec riz pilaf." },
+  { src: dishDoner, title: "Döner Kebab", cuisine: "Turque", desc: "Viande marinée cuite en broche verticale, fines tranches dorées." },
+  { src: dishBorek, title: "Börek", cuisine: "Turque", desc: "Feuilleté croustillant au fromage et herbes, doré au four." },
+  { src: dishBaklava, title: "Baklava", cuisine: "Turque", desc: "Pâte filo, pistaches, miel et sirop parfumé à la fleur d'oranger." },
+  { src: dishKunefe, title: "Künefe", cuisine: "Turque", desc: "Kadayif croustillant, fromage fondant, sirop chaud et pistaches." },
+  { src: dishGozleme, title: "Gözleme", cuisine: "Turque", desc: "Galette fine pliée et garnie, cuite à la plaque chaude." },
+  // Libanaise
+  { src: dishHoumous, title: "Houmous", cuisine: "Libanaise", desc: "Purée onctueuse de pois chiches au tahini, huile d'olive et paprika." },
+  { src: dishTaboule, title: "Taboulé", cuisine: "Libanaise", desc: "Persil frais, boulgour fin, tomates, menthe et citron." },
+  { src: dishFalafels, title: "Falafels", cuisine: "Libanaise", desc: "Boulettes dorées de pois chiches aux herbes, sauce tahini." },
+  { src: photoShawarma, title: "Shawarma", cuisine: "Libanaise", desc: "Viande marinée tranchée à la broche, sauce blanche et crudités." },
+  { src: photoMezzeLiban, title: "Mezze libanais", cuisine: "Libanaise", desc: "Sélection traditionnelle d'entrées froides à partager." },
+  { src: dishFattouche, title: "Fattouche", cuisine: "Libanaise", desc: "Salade croquante au pain pita grillé, sumac et mélasse de grenade." },
+  { src: dishKebbe, title: "Kebbé", cuisine: "Libanaise", desc: "Boulettes de boulgour farcies à la viande, dorées et croustillantes." },
+  { src: dishChichTaouk, title: "Chich Taouk", cuisine: "Libanaise", desc: "Brochettes de poulet mariné, riz parfumé et sauce à l'ail." },
+  { src: dishManakish, title: "Manakish", cuisine: "Libanaise", desc: "Pain plat au zaatar et huile d'olive, cuit au four traditionnel." },
+  { src: dishSambousek, title: "Sambousek", cuisine: "Libanaise", desc: "Chaussons feuilletés dorés farcis viande ou fromage." },
+  // Grecque
+  { src: photoMoussaka, title: "Moussaka", cuisine: "Grecque", desc: "Aubergines, viande hachée et béchamel gratinée au four." },
+  { src: dishGyros, title: "Gyros", cuisine: "Grecque", desc: "Viande grillée, pita moelleuse, tzatziki, tomate et oignon rouge." },
+  { src: photoSouvlaki, title: "Souvlaki", cuisine: "Grecque", desc: "Brochettes de viande marinée grillées sur braise." },
+  { src: dishDolmadakia, title: "Dolmadakia", cuisine: "Grecque", desc: "Feuilles de vigne farcies au riz et herbes, citron." },
+  { src: dishTzatziki, title: "Tzatziki", cuisine: "Grecque", desc: "Yaourt frais, concombre râpé, ail et menthe." },
+  { src: dishSpanakopita, title: "Spanakopita", cuisine: "Grecque", desc: "Feuilleté doré aux épinards et feta, croustillant à souhait." },
+  { src: dishPastitsio, title: "Pastitsio", cuisine: "Grecque", desc: "Pâtes longues, viande hachée et béchamel parfumée gratinée." },
+  { src: dishKeftedes, title: "Keftedes", cuisine: "Grecque", desc: "Boulettes de viande aux herbes méditerranéennes et sauce tomate." },
+  { src: dishLoukoumades, title: "Loukoumades", cuisine: "Grecque", desc: "Beignets dorés au miel, cannelle et noix concassées." },
+  { src: dishPitaGrecque, title: "Pita grecque", cuisine: "Grecque", desc: "Pain moelleux fraîchement cuit, parfait à partager." },
+  // Arménienne
+  { src: photoLavash, title: "Lavash", cuisine: "Arménienne", desc: "Pain fin traditionnel cuit au tonir, inscrit à l'UNESCO." },
+  { src: dishDolmaArm, title: "Dolma arménien", cuisine: "Arménienne", desc: "Légumes et feuilles de vigne farcis au riz et viande." },
+  { src: dishManti, title: "Manti arménien", cuisine: "Arménienne", desc: "Petits raviolis à la viande, yaourt à l'ail et beurre épicé." },
+  { src: photoGrilladesArm, title: "Khorovats", cuisine: "Arménienne", desc: "Grillades traditionnelles cuites lentement sur braises de bois." },
+  { src: dishBasturma, title: "Basturma", cuisine: "Arménienne", desc: "Viande de bœuf séchée enrobée d'épices, finement tranchée." },
+  { src: dishGata, title: "Gata", cuisine: "Arménienne", desc: "Pâtisserie briochée dorée, cœur sucré aux notes de beurre." },
+  { src: dishKufta, title: "Kufta arménien", cuisine: "Arménienne", desc: "Boulettes de viande fines aux épices douces, riz pilaf." },
+  { src: dishTolma, title: "Tolma", cuisine: "Arménienne", desc: "Légumes farcis (poivrons, tomates, aubergines) au riz et viande." },
+  { src: dishMatnakash, title: "Matnakash", cuisine: "Arménienne", desc: "Pain moelleux traditionnel aux motifs gravés à la main." },
+  { src: dishNazook, title: "Nazook", cuisine: "Arménienne", desc: "Feuilleté sucré aux noix et beurre, parfumé à la cardamome." },
 ];
 
 const regimes = [
@@ -414,7 +499,7 @@ function ServicesPage() {
       {/* SÉPARATEUR */}
       <div aria-hidden className="relative h-px bg-border">
         <span className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 bg-background px-6 text-xs tracking-[0.4em] uppercase text-primary">
-          Galerie
+          Galerie des spécialités
         </span>
       </div>
 
@@ -473,59 +558,65 @@ function ServicesPage() {
 
 function PhotoGallery() {
   const [active, setActive] = useState<number | null>(null);
-  const current = active !== null ? photos[active] : null;
+  const current = active !== null ? specialties[active] : null;
 
   const close = () => setActive(null);
-  const prev = () => setActive((a) => (a === null ? null : (a - 1 + photos.length) % photos.length));
-  const next = () => setActive((a) => (a === null ? null : (a + 1) % photos.length));
+  const prev = () => setActive((a) => (a === null ? null : (a - 1 + specialties.length) % specialties.length));
+  const next = () => setActive((a) => (a === null ? null : (a + 1) % specialties.length));
 
   return (
     <section className="py-24 md:py-32 bg-card">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <Reveal>
           <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Galerie des plats</p>
+            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Galerie des spécialités</p>
             <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
-              L'art de la table,<br /><em className="not-italic text-primary">en images</em>
+              50 spécialités,<br /><em className="not-italic text-primary">en images</em>
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Cliquez sur une photo pour l'agrandir.
+              Dix plats incontournables pour chacune de nos cinq cuisines.
+              Cliquez sur une photo pour la découvrir en grand format.
             </p>
           </div>
         </Reveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {photos.map((p, i) => (
+          {specialties.map((p, i) => (
             <Reveal key={p.src} delay={(i % 3) * 80}>
-              <button
-                type="button"
-                onClick={() => setActive(i)}
-                className="group relative block w-full overflow-hidden bg-noir aspect-[4/5] focus:outline-none focus:ring-2 focus:ring-primary"
-                aria-label={`Agrandir : ${p.title}`}
-              >
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-noir/80 via-noir/10 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="flex items-center gap-2 bg-background/90 text-foreground px-5 py-3 text-[10px] tracking-[0.3em] uppercase">
-                    <ZoomIn size={14} /> Agrandir
-                  </span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-left">
-                  <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
+              <article className="group bg-background border border-border overflow-hidden flex flex-col h-full shadow-elegant hover:shadow-2xl transition-smooth">
+                <button
+                  type="button"
+                  onClick={() => setActive(i)}
+                  className="relative block w-full overflow-hidden bg-noir aspect-[4/5] focus:outline-none focus:ring-2 focus:ring-primary"
+                  aria-label={`Agrandir : ${p.title}`}
+                >
+                  <img
+                    src={p.src}
+                    alt={`${p.title} — cuisine ${p.cuisine}`}
+                    loading="lazy"
+                    width={1024}
+                    height={1280}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-noir/40 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="flex items-center gap-2 bg-background/95 text-foreground px-5 py-3 text-[10px] tracking-[0.3em] uppercase">
+                      <ZoomIn size={14} /> Agrandir
+                    </span>
+                  </div>
+                </button>
+                <div className="p-6 md:p-7 flex-1 flex flex-col">
+                  <p className="text-[10px] tracking-[0.35em] uppercase text-primary mb-2">
                     Cuisine {p.cuisine}
                   </p>
-                  <p className="font-display text-2xl md:text-3xl text-primary-foreground">
+                  <h3 className="font-display text-2xl md:text-[28px] leading-tight text-foreground">
                     {p.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {p.desc}
                   </p>
                 </div>
-              </button>
+              </article>
             </Reveal>
           ))}
         </div>
@@ -571,15 +662,18 @@ function PhotoGallery() {
           >
             <img
               src={current.src}
-              alt={current.alt}
+              alt={`${current.title} — cuisine ${current.cuisine}`}
               className="w-full h-auto max-h-[80vh] object-contain shadow-2xl"
             />
-            <figcaption className="mt-5 text-center">
+            <figcaption className="mt-5 text-center max-w-2xl mx-auto">
               <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
                 Cuisine {current.cuisine}
               </p>
               <p className="font-display text-2xl md:text-3xl text-primary-foreground">
                 {current.title}
+              </p>
+              <p className="mt-3 text-primary-foreground/75 text-sm md:text-base leading-relaxed">
+                {current.desc}
               </p>
             </figcaption>
           </figure>
