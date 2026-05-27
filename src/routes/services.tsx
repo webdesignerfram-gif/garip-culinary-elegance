@@ -499,7 +499,7 @@ function ServicesPage() {
       {/* SÉPARATEUR */}
       <div aria-hidden className="relative h-px bg-border">
         <span className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 bg-background px-6 text-xs tracking-[0.4em] uppercase text-primary">
-          Galerie
+          Galerie des spécialités
         </span>
       </div>
 
