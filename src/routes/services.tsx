@@ -348,19 +348,64 @@ const menus: Menu[] = [
   },
 ];
 
-type Photo = { src: string; alt: string; cuisine: string; title: string };
+type Specialty = { src: string; title: string; cuisine: string; desc: string };
 
-const photos: Photo[] = [
-  { src: photoPlateauMedit, alt: "Plateau méditerranéen", cuisine: "Méditerranéenne", title: "Plateau méditerranéen" },
-  { src: photoFruitsMer, alt: "Fruits de mer méditerranéens", cuisine: "Méditerranéenne", title: "Fruits de mer méditerranéens" },
-  { src: photoKebabs, alt: "Kebabs turcs grillés", cuisine: "Turque", title: "Kebabs" },
-  { src: photoPide, alt: "Pide turc au four à pierre", cuisine: "Turque", title: "Pide" },
-  { src: photoMezzeLiban, alt: "Mezze libanais à partager", cuisine: "Libanaise", title: "Mezze libanais" },
-  { src: photoShawarma, alt: "Shawarma libanais", cuisine: "Libanaise", title: "Shawarma" },
-  { src: photoMoussaka, alt: "Moussaka grecque traditionnelle", cuisine: "Grecque", title: "Moussaka" },
-  { src: photoSouvlaki, alt: "Souvlaki grec", cuisine: "Grecque", title: "Souvlaki" },
-  { src: photoGrilladesArm, alt: "Grillades arméniennes Khorovats", cuisine: "Arménienne", title: "Grillades arméniennes" },
-  { src: photoLavash, alt: "Pain lavash arménien", cuisine: "Arménienne", title: "Lavash" },
+const specialties: Specialty[] = [
+  // Méditerranéenne
+  { src: photoPlateauMedit, title: "Plateau de mezze", cuisine: "Méditerranéenne", desc: "Assortiment généreux de petites entrées chaudes et froides à partager." },
+  { src: dishCouscous, title: "Couscous royal", cuisine: "Méditerranéenne", desc: "Semoule fine, légumes mijotés et viandes grillées, bouillon parfumé." },
+  { src: photoFruitsMer, title: "Fruits de mer méditerranéens", cuisine: "Méditerranéenne", desc: "Sélection iodée du jour, citron, huile d'olive et herbes fraîches." },
+  { src: dishGrilladesMedit, title: "Grillades méditerranéennes", cuisine: "Méditerranéenne", desc: "Brochettes et viandes marinées aux herbes du soleil, cuites à la flamme." },
+  { src: dishSaladeGrecque, title: "Salade grecque", cuisine: "Méditerranéenne", desc: "Feta, olives kalamata, tomates juteuses et huile d'olive vierge." },
+  { src: dishCalamars, title: "Calamars grillés", cuisine: "Méditerranéenne", desc: "Calamars tendres au citron et persil, juste saisis à la plancha." },
+  { src: dishAubergines, title: "Aubergines grillées", cuisine: "Méditerranéenne", desc: "Fines tranches fondantes, yaourt, grenade et menthe fraîche." },
+  { src: dishDorade, title: "Dorade grillée", cuisine: "Méditerranéenne", desc: "Dorade royale entière, peau croustillante, citron et herbes." },
+  { src: dishPaella, title: "Paëlla méditerranéenne", cuisine: "Méditerranéenne", desc: "Riz safrané, fruits de mer généreux, cuisson lente en grande poêle." },
+  { src: dishCrevettes, title: "Crevettes grillées", cuisine: "Méditerranéenne", desc: "Crevettes royales à l'ail et persil, juste grillées et citronnées." },
+  // Turque
+  { src: dishIskender, title: "İskender Kebab", cuisine: "Turque", desc: "Fines tranches de viande sur pide, sauce tomate, yaourt et beurre fondu." },
+  { src: photoKebabs, title: "Adana Kebab", cuisine: "Turque", desc: "Brochette de viande hachée épicée, grillée au charbon de bois." },
+  { src: photoPide, title: "Pide", cuisine: "Turque", desc: "Pain en forme de barque garni, cuit au four à pierre." },
+  { src: dishLahmacun, title: "Lahmacun", cuisine: "Turque", desc: "Galette fine à la viande hachée épicée, persil et citron." },
+  { src: dishKofte, title: "Köfte", cuisine: "Turque", desc: "Boulettes de viande aux épices, grillées et servies avec riz pilaf." },
+  { src: dishDoner, title: "Döner Kebab", cuisine: "Turque", desc: "Viande marinée cuite en broche verticale, fines tranches dorées." },
+  { src: dishBorek, title: "Börek", cuisine: "Turque", desc: "Feuilleté croustillant au fromage et herbes, doré au four." },
+  { src: dishBaklava, title: "Baklava", cuisine: "Turque", desc: "Pâte filo, pistaches, miel et sirop parfumé à la fleur d'oranger." },
+  { src: dishKunefe, title: "Künefe", cuisine: "Turque", desc: "Kadayif croustillant, fromage fondant, sirop chaud et pistaches." },
+  { src: dishGozleme, title: "Gözleme", cuisine: "Turque", desc: "Galette fine pliée et garnie, cuite à la plaque chaude." },
+  // Libanaise
+  { src: dishHoumous, title: "Houmous", cuisine: "Libanaise", desc: "Purée onctueuse de pois chiches au tahini, huile d'olive et paprika." },
+  { src: dishTaboule, title: "Taboulé", cuisine: "Libanaise", desc: "Persil frais, boulgour fin, tomates, menthe et citron." },
+  { src: dishFalafels, title: "Falafels", cuisine: "Libanaise", desc: "Boulettes dorées de pois chiches aux herbes, sauce tahini." },
+  { src: photoShawarma, title: "Shawarma", cuisine: "Libanaise", desc: "Viande marinée tranchée à la broche, sauce blanche et crudités." },
+  { src: photoMezzeLiban, title: "Mezze libanais", cuisine: "Libanaise", desc: "Sélection traditionnelle d'entrées froides à partager." },
+  { src: dishFattouche, title: "Fattouche", cuisine: "Libanaise", desc: "Salade croquante au pain pita grillé, sumac et mélasse de grenade." },
+  { src: dishKebbe, title: "Kebbé", cuisine: "Libanaise", desc: "Boulettes de boulgour farcies à la viande, dorées et croustillantes." },
+  { src: dishChichTaouk, title: "Chich Taouk", cuisine: "Libanaise", desc: "Brochettes de poulet mariné, riz parfumé et sauce à l'ail." },
+  { src: dishManakish, title: "Manakish", cuisine: "Libanaise", desc: "Pain plat au zaatar et huile d'olive, cuit au four traditionnel." },
+  { src: dishSambousek, title: "Sambousek", cuisine: "Libanaise", desc: "Chaussons feuilletés dorés farcis viande ou fromage." },
+  // Grecque
+  { src: photoMoussaka, title: "Moussaka", cuisine: "Grecque", desc: "Aubergines, viande hachée et béchamel gratinée au four." },
+  { src: dishGyros, title: "Gyros", cuisine: "Grecque", desc: "Viande grillée, pita moelleuse, tzatziki, tomate et oignon rouge." },
+  { src: photoSouvlaki, title: "Souvlaki", cuisine: "Grecque", desc: "Brochettes de viande marinée grillées sur braise." },
+  { src: dishDolmadakia, title: "Dolmadakia", cuisine: "Grecque", desc: "Feuilles de vigne farcies au riz et herbes, citron." },
+  { src: dishTzatziki, title: "Tzatziki", cuisine: "Grecque", desc: "Yaourt frais, concombre râpé, ail et menthe." },
+  { src: dishSpanakopita, title: "Spanakopita", cuisine: "Grecque", desc: "Feuilleté doré aux épinards et feta, croustillant à souhait." },
+  { src: dishPastitsio, title: "Pastitsio", cuisine: "Grecque", desc: "Pâtes longues, viande hachée et béchamel parfumée gratinée." },
+  { src: dishKeftedes, title: "Keftedes", cuisine: "Grecque", desc: "Boulettes de viande aux herbes méditerranéennes et sauce tomate." },
+  { src: dishLoukoumades, title: "Loukoumades", cuisine: "Grecque", desc: "Beignets dorés au miel, cannelle et noix concassées." },
+  { src: dishPitaGrecque, title: "Pita grecque", cuisine: "Grecque", desc: "Pain moelleux fraîchement cuit, parfait à partager." },
+  // Arménienne
+  { src: photoLavash, title: "Lavash", cuisine: "Arménienne", desc: "Pain fin traditionnel cuit au tonir, inscrit à l'UNESCO." },
+  { src: dishDolmaArm, title: "Dolma arménien", cuisine: "Arménienne", desc: "Légumes et feuilles de vigne farcis au riz et viande." },
+  { src: dishManti, title: "Manti arménien", cuisine: "Arménienne", desc: "Petits raviolis à la viande, yaourt à l'ail et beurre épicé." },
+  { src: photoGrilladesArm, title: "Khorovats", cuisine: "Arménienne", desc: "Grillades traditionnelles cuites lentement sur braises de bois." },
+  { src: dishBasturma, title: "Basturma", cuisine: "Arménienne", desc: "Viande de bœuf séchée enrobée d'épices, finement tranchée." },
+  { src: dishGata, title: "Gata", cuisine: "Arménienne", desc: "Pâtisserie briochée dorée, cœur sucré aux notes de beurre." },
+  { src: dishKufta, title: "Kufta arménien", cuisine: "Arménienne", desc: "Boulettes de viande fines aux épices douces, riz pilaf." },
+  { src: dishTolma, title: "Tolma", cuisine: "Arménienne", desc: "Légumes farcis (poivrons, tomates, aubergines) au riz et viande." },
+  { src: dishMatnakash, title: "Matnakash", cuisine: "Arménienne", desc: "Pain moelleux traditionnel aux motifs gravés à la main." },
+  { src: dishNazook, title: "Nazook", cuisine: "Arménienne", desc: "Feuilleté sucré aux noix et beurre, parfumé à la cardamome." },
 ];
 
 const regimes = [
