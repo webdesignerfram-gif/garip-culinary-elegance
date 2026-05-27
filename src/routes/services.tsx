@@ -391,16 +391,16 @@ function ServicesPage() {
                     <p className="mt-2 italic text-muted-foreground text-sm">{m.subtitle}</p>
                   </header>
 
-                  <ul className="mt-6 space-y-4">
+                  <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
                     {m.dishes.map((d) => (
-                      <li key={d.name} className="group/dish">
-                        <div className="flex items-baseline gap-3">
-                          <span className="font-display text-base md:text-lg text-foreground whitespace-nowrap">
-                            {d.name}
-                          </span>
-                          <span className="flex-1 border-b border-dotted border-border/70 translate-y-[-4px]" />
-                        </div>
-                        <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
+                      <li
+                        key={d}
+                        className="flex items-baseline gap-3 py-1 group/dish hover:text-primary transition-colors"
+                      >
+                        <span className="font-display text-[15px] md:text-base text-foreground group-hover/dish:text-primary transition-colors whitespace-nowrap">
+                          {d}
+                        </span>
+                        <span className="flex-1 border-b border-dotted border-border/60 translate-y-[-4px]" />
                       </li>
                     ))}
                   </ul>
