@@ -558,59 +558,65 @@ function ServicesPage() {
 
 function PhotoGallery() {
   const [active, setActive] = useState<number | null>(null);
-  const current = active !== null ? photos[active] : null;
+  const current = active !== null ? specialties[active] : null;
 
   const close = () => setActive(null);
-  const prev = () => setActive((a) => (a === null ? null : (a - 1 + photos.length) % photos.length));
-  const next = () => setActive((a) => (a === null ? null : (a + 1) % photos.length));
+  const prev = () => setActive((a) => (a === null ? null : (a - 1 + specialties.length) % specialties.length));
+  const next = () => setActive((a) => (a === null ? null : (a + 1) % specialties.length));
 
   return (
     <section className="py-24 md:py-32 bg-card">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <Reveal>
           <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Galerie des plats</p>
+            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">Galerie des spécialités</p>
             <h2 className="font-display text-4xl md:text-6xl text-foreground text-balance leading-tight">
-              L'art de la table,<br /><em className="not-italic text-primary">en images</em>
+              50 spécialités,<br /><em className="not-italic text-primary">en images</em>
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Cliquez sur une photo pour l'agrandir.
+              Dix plats incontournables pour chacune de nos cinq cuisines.
+              Cliquez sur une photo pour la découvrir en grand format.
             </p>
           </div>
         </Reveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {photos.map((p, i) => (
+          {specialties.map((p, i) => (
             <Reveal key={p.src} delay={(i % 3) * 80}>
-              <button
-                type="button"
-                onClick={() => setActive(i)}
-                className="group relative block w-full overflow-hidden bg-noir aspect-[4/5] focus:outline-none focus:ring-2 focus:ring-primary"
-                aria-label={`Agrandir : ${p.title}`}
-              >
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-noir/80 via-noir/10 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="flex items-center gap-2 bg-background/90 text-foreground px-5 py-3 text-[10px] tracking-[0.3em] uppercase">
-                    <ZoomIn size={14} /> Agrandir
-                  </span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-left">
-                  <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
+              <article className="group bg-background border border-border overflow-hidden flex flex-col h-full shadow-elegant hover:shadow-2xl transition-smooth">
+                <button
+                  type="button"
+                  onClick={() => setActive(i)}
+                  className="relative block w-full overflow-hidden bg-noir aspect-[4/5] focus:outline-none focus:ring-2 focus:ring-primary"
+                  aria-label={`Agrandir : ${p.title}`}
+                >
+                  <img
+                    src={p.src}
+                    alt={`${p.title} — cuisine ${p.cuisine}`}
+                    loading="lazy"
+                    width={1024}
+                    height={1280}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-noir/40 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="flex items-center gap-2 bg-background/95 text-foreground px-5 py-3 text-[10px] tracking-[0.3em] uppercase">
+                      <ZoomIn size={14} /> Agrandir
+                    </span>
+                  </div>
+                </button>
+                <div className="p-6 md:p-7 flex-1 flex flex-col">
+                  <p className="text-[10px] tracking-[0.35em] uppercase text-primary mb-2">
                     Cuisine {p.cuisine}
                   </p>
-                  <p className="font-display text-2xl md:text-3xl text-primary-foreground">
+                  <h3 className="font-display text-2xl md:text-[28px] leading-tight text-foreground">
                     {p.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {p.desc}
                   </p>
                 </div>
-              </button>
+              </article>
             </Reveal>
           ))}
         </div>
@@ -656,15 +662,18 @@ function PhotoGallery() {
           >
             <img
               src={current.src}
-              alt={current.alt}
+              alt={`${current.title} — cuisine ${current.cuisine}`}
               className="w-full h-auto max-h-[80vh] object-contain shadow-2xl"
             />
-            <figcaption className="mt-5 text-center">
+            <figcaption className="mt-5 text-center max-w-2xl mx-auto">
               <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
                 Cuisine {current.cuisine}
               </p>
               <p className="font-display text-2xl md:text-3xl text-primary-foreground">
                 {current.title}
+              </p>
+              <p className="mt-3 text-primary-foreground/75 text-sm md:text-base leading-relaxed">
+                {current.desc}
               </p>
             </figcaption>
           </figure>
