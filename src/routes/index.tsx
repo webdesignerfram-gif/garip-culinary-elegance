@@ -353,32 +353,53 @@ function Index() {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
               <div>
-                <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4">Galerie</p>
+                <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4">Nos réalisations</p>
                 <h2 className="font-display text-4xl md:text-6xl text-primary-foreground text-balance leading-tight">
-                  Une cuisine qui<br />se contemple
+                  Découvrez<br />nos réalisations
                 </h2>
               </div>
               <p className="max-w-md text-primary-foreground/60 leading-relaxed">
-                Grillades turques, mezze libanais, spécialités grecques et arméniennes, buffets méditerranéens, pâtisseries traditionnelles.
+                Plus de 36 ans d'expérience au service de vos événements à Avignon et dans toute la région.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {gallery.map((g, i) => (
-              <Reveal key={g.tag} delay={(i % 3) * 120}>
-                <figure className="group relative overflow-hidden aspect-[4/5]">
-                  <img
-                    src={g.src}
-                    alt={g.alt}
-                    loading="lazy"
-                    width={1024}
-                    height={1280}
-                    className="w-full h-full object-cover transition-smooth group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/20 to-transparent opacity-90" />
-                  <figcaption className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                    <span className="text-xs tracking-[0.25em] uppercase text-gold">— {g.tag}</span>
+          {/* Texte de présentation */}
+          <Reveal>
+            <div className="bg-primary-foreground/[0.03] border border-primary-foreground/10 backdrop-blur-sm p-8 md:p-14 mb-20 max-w-5xl mx-auto">
+              <p className="text-primary-foreground/80 leading-relaxed text-base md:text-lg">
+                Depuis plus de 36 ans, <span className="text-gold">Traiteur de Garip</span> accompagne ses clients lors de leurs événements les plus importants. Mariages, anniversaires, réceptions privées, événements d'entreprise ou repas familiaux, chaque prestation est préparée avec passion, savoir-faire et authenticité.
+              </p>
+              <p className="mt-6 text-primary-foreground/80 leading-relaxed text-base md:text-lg">
+                Au fil des années, nous avons eu le plaisir de servir des centaines de clients à travers Avignon et sa région en proposant une cuisine méditerranéenne, turque, libanaise, grecque et arménienne de qualité.
+              </p>
+              <p className="mt-6 text-primary-foreground/80 leading-relaxed text-base md:text-lg">
+                Les photos ci-dessous présentent quelques-unes de nos réalisations, de nos buffets et de nos créations culinaires préparées pour nos clients. Elles reflètent notre engagement, notre expérience et notre passion pour la gastronomie.
+              </p>
+              <p className="mt-6 text-primary-foreground/80 leading-relaxed text-base md:text-lg">
+                Chaque événement est unique. C'est pourquoi nous mettons tout notre savoir-faire au service de vos envies afin de créer des moments inoubliables autour d'une cuisine généreuse et raffinée.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {realisations.map((r, i) => (
+              <Reveal key={i} delay={(i % 3) * 100}>
+                <figure className="group relative overflow-hidden bg-card shadow-elegant transition-smooth hover:shadow-soft hover:-translate-y-1">
+                  <div className="overflow-hidden aspect-[4/5]">
+                    <img
+                      src={r.src}
+                      alt={r.title}
+                      loading="lazy"
+                      width={1024}
+                      height={1280}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <figcaption className="p-6 border-t border-border">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-primary mb-2">Réalisation {String(i + 1).padStart(2, "0")}</p>
+                    <h3 className="font-display text-xl text-foreground leading-snug">{r.title}</h3>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
                   </figcaption>
                 </figure>
               </Reveal>
