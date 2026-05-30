@@ -368,7 +368,7 @@ function Index() {
           <Reveal>
             <div className="bg-primary-foreground/[0.03] border border-primary-foreground/10 backdrop-blur-sm p-8 md:p-14 mb-20 max-w-5xl mx-auto">
               <p className="text-primary-foreground/80 leading-relaxed text-base md:text-lg">
-                Depuis plus de 36 ans, <span className="text-gold">Traiteur de Garip</span> accompagne ses clients lors de leurs événements les plus importants. Mariages, anniversaires, réceptions privées, événements d'entreprise ou repas familiaux, chaque prestation est préparée avec passion, savoir-faire et authenticité.
+                Depuis plus de 36 ans, <span className="text-gold">Traiteur Garip</span> accompagne ses clients lors de leurs événements les plus importants. Mariages, anniversaires, réceptions privées, événements d'entreprise ou repas familiaux, chaque prestation est préparée avec passion, savoir-faire et authenticité.
               </p>
               <p className="mt-6 text-primary-foreground/80 leading-relaxed text-base md:text-lg">
                 Au fil des années, nous avons eu le plaisir de servir des centaines de clients à travers Avignon et sa région en proposant une cuisine méditerranéenne, turque, libanaise, grecque et arménienne de qualité.
@@ -480,7 +480,7 @@ function Index() {
           <Reveal delay={150}>
             <div className="aspect-square overflow-hidden border border-border shadow-elegant">
               <iframe
-                title="Carte Traiteur de Garip Avignon"
+                title="Carte Traiteur Garip Avignon"
                 src={MAPS_EMBED}
                 className="w-full h-full"
                 loading="lazy"
@@ -504,7 +504,7 @@ function Index() {
               <p>
                 Avignon, cité des Papes et carrefour culturel de la Provence, partage avec la Méditerranée une même
                 passion pour les produits du soleil : huile d'olive, herbes fraîches, légumes gorgés de lumière. C'est ici,
-                à quelques pas du Palais des Papes et du Pont d'Avignon, que <strong className="text-foreground">Traiteur de Garip</strong> a posé
+                à quelques pas du Palais des Papes et du Pont d'Avignon, que <strong className="text-foreground">Traiteur Garip</strong> a posé
                 ses fourneaux il y a plus de 36 ans.
               </p>
               <p>

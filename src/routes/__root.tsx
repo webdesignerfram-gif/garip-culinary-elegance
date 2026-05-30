@@ -75,7 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Traiteur Garip — 36 ans d'excellence méditerranéenne" },
       { name: "description", content: "Traiteur méditerranéen, turc, libanais, grec et arménien. Halal, casher, végétarien, vegan. Mariages, événements d'entreprise, réceptions sur mesure." },
       { name: "author", content: "Traiteur Garip" },
-      { property: "og:title", content: "Traiteur de Garip — Traiteur méditerranéen haut de gamme" },
+      { property: "og:title", content: "Traiteur Garip — Traiteur méditerranéen haut de gamme" },
       { property: "og:description", content: "36 ans d'excellence culinaire. Cuisine méditerranéenne, turque, libanaise, grecque, arménienne. Halal, casher, végétarien, vegan." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
