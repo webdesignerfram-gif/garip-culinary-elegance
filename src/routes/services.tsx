@@ -59,9 +59,9 @@ import dishNazook from "@/assets/dish-nazook.jpg";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Spécialités — Traiteur de Garip · Cuisine méditerranéenne, turque, libanaise" },
+      { title: "Spécialités — Traiteur Garip · Cuisine méditerranéenne, turque, libanaise" },
       { name: "description", content: "Shawarma, kebabs, mezze, baklava, couscous, grillades arméniennes. Service traiteur halal, casher, végétarien et vegan pour tous événements." },
-      { property: "og:title", content: "Spécialités — Traiteur de Garip" },
+      { property: "og:title", content: "Spécialités — Traiteur Garip" },
       { property: "og:description", content: "Nos spécialités méditerranéennes et orientales. Menus halal, casher, végétariens et vegan." },
       { property: "og:url", content: "/services" },
     ],
@@ -72,7 +72,7 @@ export const Route = createFileRoute("/services")({
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "FoodEstablishment"],
         "@id": "https://traiteurdegarip.fr/#business",
-        name: "Traiteur de Garip",
+        name: "Traiteur Garip",
         description: "Traiteur méditerranéen, turc, libanais, grec et arménien à Avignon depuis 36 ans. Service traiteur halal, casher, végétarien et vegan pour mariages, événements d'entreprise et réceptions privées.",
         url: "https://traiteurdegarip.fr",
         telephone: "+33490331749",

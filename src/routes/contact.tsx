@@ -9,16 +9,16 @@ const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
 const PHONE_DISPLAY = "+33 4 90 33 17 49";
 const PHONE_TEL = "+33490331749";
 const EMAIL = "contact@traiteurdegarip.fr";
-const MAPS_QUERY = encodeURIComponent("Traiteur de Garip, 22 Rue Portail Matheron, 84000 Avignon");
+const MAPS_QUERY = encodeURIComponent("Traiteur Garip, 22 Rue Portail Matheron, 84000 Avignon");
 const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAPS_QUERY}`;
 const MAPS_EMBED = `https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`;
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Traiteur de Garip · Devis traiteur méditerranéen" },
-      { name: "description", content: "Contactez Traiteur de Garip à Avignon — 22 Rue Portail Matheron. Téléphone +33 4 90 33 17 49. Ouvert tous les jours 10h-21h. Devis traiteur méditerranéen, halal, casher." },
-      { property: "og:title", content: "Contact — Traiteur de Garip" },
+      { title: "Contact — Traiteur Garip · Devis traiteur méditerranéen" },
+      { name: "description", content: "Contactez Traiteur Garip à Avignon — 22 Rue Portail Matheron. Téléphone +33 4 90 33 17 49. Ouvert tous les jours 10h-21h. Devis traiteur méditerranéen, halal, casher." },
+      { property: "og:title", content: "Contact — Traiteur Garip" },
       { property: "og:description", content: "Traiteur à Avignon depuis 36 ans. Contactez-nous pour un devis personnalisé." },
       { property: "og:url", content: "/contact" },
     ],
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/contact")({
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "FoodEstablishment"],
         "@id": "https://traiteurdegarip.fr/#business",
-        name: "Traiteur de Garip",
+        name: "Traiteur Garip",
         description: "Traiteur méditerranéen, turc, libanais, grec et arménien à Avignon depuis 36 ans. Service traiteur halal, casher, végétarien et vegan pour mariages, événements d'entreprise et réceptions privées.",
         url: "https://traiteurdegarip.fr",
         telephone: "+33490331749",
@@ -316,7 +316,7 @@ function ContactPage() {
           <Reveal delay={150}>
             <div className="aspect-[16/9] overflow-hidden border border-border shadow-elegant">
               <iframe
-                title="Carte Traiteur de Garip Avignon"
+                title="Carte Traiteur Garip Avignon"
                 src={MAPS_EMBED}
                 className="w-full h-full"
                 loading="lazy"
@@ -339,7 +339,7 @@ function ContactPage() {
             <div className="mt-10 space-y-6 text-muted-foreground leading-relaxed text-lg text-left md:text-center">
               <p>
                 Situé au <strong className="text-foreground">22 Rue Portail Matheron à Avignon</strong>,
-                Traiteur de Garip vous accompagne depuis plus de 36 ans dans l'organisation de vos
+                Traiteur Garip vous accompagne depuis plus de 36 ans dans l'organisation de vos
                 réceptions, mariages, baptêmes, anniversaires et événements d'entreprise.
                 Notre cuisine méditerranéenne, turque, libanaise, grecque et arménienne s'adapte
                 à tous les régimes alimentaires : <strong className="text-foreground">halal, casher, végétarien et vegan</strong>.
