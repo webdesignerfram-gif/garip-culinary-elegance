@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <h3 className="font-display text-3xl">
-              Traiteur <span className="text-gold italic">de Garip</span>
+              Traiteur <span className="text-gold italic"> Garip</span>
             </h3>
             <p className="mt-4 text-sm text-primary-foreground/70 leading-relaxed max-w-xs">
               36 ans d'expérience au service de votre table. Spécialiste de la cuisine méditerranéenne et orientale. Noté 4,7/5 par plus de 103 clients.
@@ -55,7 +55,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-primary-foreground/50">
-          <p>© {new Date().getFullYear()} Traiteur de Garip. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Traiteur Garip. Tous droits réservés.</p>
           <p>Cuisine méditerranéenne · turque · libanaise · grecque · arménienne</p>
         </div>
       </div>

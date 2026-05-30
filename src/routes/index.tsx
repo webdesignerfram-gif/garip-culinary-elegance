@@ -38,9 +38,9 @@ import r30 from "@/assets/realisation-30.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Traiteur de Garip — 36 ans d'excellence culinaire méditerranéenne" },
+      { title: "Traiteur Garip — 36 ans d'excellence culinaire méditerranéenne" },
       { name: "description", content: "Traiteur méditerranéen, turc, libanais, grec et arménien. Mariages, événements d'entreprise, réceptions sur mesure. Halal, casher, végétarien, vegan." },
-      { property: "og:title", content: "Traiteur de Garip — Traiteur méditerranéen haut de gamme" },
+      { property: "og:title", content: "Traiteur Garip — Traiteur méditerranéen haut de gamme" },
       { property: "og:description", content: "36 ans d'excellence. Cuisine méditerranéenne, turque, libanaise, grecque, arménienne pour tous vos événements." },
       { property: "og:url", content: "/" },
     ],
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/")({
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "FoodEstablishment"],
         "@id": "https://traiteurdegarip.fr/#business",
-        name: "Traiteur de Garip",
+        name: "Traiteur Garip",
         description: "Traiteur méditerranéen, turc, libanais, grec et arménien à Avignon depuis 36 ans. Service traiteur halal, casher, végétarien et vegan pour mariages, événements d'entreprise et réceptions privées.",
         url: "https://traiteurdegarip.fr",
         telephone: "+33490331749",
@@ -190,7 +190,7 @@ const trust = [
 ];
 
 const realisations = [
-  { src: r01, title: "Mariage haut de gamme à Avignon", desc: "Une cérémonie d'exception sublimée par un buffet raffiné et un service attentionné de bout en bout." },
+  { src: r01, title: "\u200BMariage haut de gamme à Avignon", desc: "\u200B" },
   { src: r02, title: "Buffet méditerranéen sur mesure", desc: "Une sélection de mezze, grillades et spécialités préparée selon les envies de nos clients." },
   { src: r03, title: "Réception familiale réussie", desc: "Des moments chaleureux célébrés autour d'une cuisine généreuse et conviviale." },
   { src: r04, title: "Saveurs de la Méditerranée", desc: "Un voyage gustatif entre traditions turques, libanaises, grecques et arméniennes." },
@@ -262,7 +262,7 @@ function RatingStars({ className = "" }: { className?: string }) {
 }
 
 const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
-const MAPS_QUERY = encodeURIComponent("Traiteur de Garip, 22 Rue Portail Matheron, 84000 Avignon");
+const MAPS_QUERY = encodeURIComponent("Traiteur Garip, 22 Rue Portail Matheron, 84000 Avignon");
 const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAPS_QUERY}`;
 const MAPS_EMBED = `https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`;
 
@@ -339,7 +339,7 @@ function Index() {
             </h2>
             <div className="mt-10 mx-auto w-16 h-px bg-gradient-warm" />
             <p className="mt-10 text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Depuis 1989, Traiteur de Garip célèbre les grandes traditions culinaires de la Méditerranée et de l'Orient.
+              Depuis 1989, Traiteur Garip célèbre les grandes traditions culinaires de la Méditerranée et de l'Orient.
               Chaque plat est préparé avec des produits soigneusement sélectionnés, dans le respect des recettes héritées
               de nos aïeux — turques, libanaises, grecques, arméniennes — et adapté à toutes les cultures et tous les régimes.
             </p>

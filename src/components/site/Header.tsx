@@ -15,7 +15,7 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-12 md:py-8">
         <Link to="/" className="group flex flex-col leading-none">
           <span className="font-display text-2xl md:text-3xl text-primary-foreground tracking-wide">
-            Traiteur <span className="text-gold italic">de Garip</span>
+            Traiteur <span className="text-gold italic"> Garip</span>
           </span>
           <span className="mt-1 text-[10px] tracking-[0.3em] text-primary-foreground/70 uppercase">
             Depuis 36 ans

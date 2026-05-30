@@ -72,9 +72,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Traiteur de Garip — 36 ans d'excellence méditerranéenne" },
+      { title: "Traiteur Garip — 36 ans d'excellence méditerranéenne" },
       { name: "description", content: "Traiteur méditerranéen, turc, libanais, grec et arménien. Halal, casher, végétarien, vegan. Mariages, événements d'entreprise, réceptions sur mesure." },
-      { name: "author", content: "Traiteur de Garip" },
+      { name: "author", content: "Traiteur Garip" },
       { property: "og:title", content: "Traiteur de Garip — Traiteur méditerranéen haut de gamme" },
       { property: "og:description", content: "36 ans d'excellence culinaire. Cuisine méditerranéenne, turque, libanaise, grecque, arménienne. Halal, casher, végétarien, vegan." },
       { property: "og:type", content: "website" },
