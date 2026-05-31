@@ -119,9 +119,9 @@ export const Route = createFileRoute("/")({
           },
           {
             "@type": "Review",
-            author: { "@type": "Person", name: "Antoine D." },
+            author: { "@type": "Person", name: "​Maryl Renaud" },
             reviewRating: { "@type": "Rating", ratingValue: "5" },
-            reviewBody: "Un buffet magnifique, varié et raffiné. Tous nos invités nous ont félicités pour le choix du traiteur.",
+            reviewBody: "Clients depuis quelques années déjà, c’est toujours un plaisir des yeux et des papilles qui nous attend. Nous n’avons jamais été déçus par un plat et l’accueil est au top. Continuez à nous régaler.",
           },
         ],
         hasOfferCatalog: {
@@ -239,9 +239,9 @@ const reviews = [
     text: "​Depuis qq temps je viens me régaler chez Garip! Un bonheur pour les papilles, il y a beaucoup de choix de plats  végétariens ou carnés, à emporter ou sur place. ",
   },
   {
-    name: "Antoine D.",
+    name: "​Maryl Renaud",
     event: "​",
-    text: "Un buffet magnifique, varié et raffiné. Tous nos invités nous ont félicités pour le choix du traiteur.",
+    text: "Clients depuis quelques années déjà, c’est toujours un plaisir des yeux et des papilles qui nous attend. Nous n’avons jamais été déçus par un plat et l’accueil est au top. Continuez à nous régaler.",
   },
 ];
 
