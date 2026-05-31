@@ -3,7 +3,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
 import { Star, Award, Users, ShieldCheck, ArrowRight, MapPin, Navigation, Quote } from "lucide-react";
-import heroImg from "@/assets/hero-placeholder.jpg";
+import heroImg from "@/assets/hero-garip.jpg";
 import r01 from "@/assets/realisation-01.jpg";
 import r02 from "@/assets/realisation-02.jpg";
 import r03 from "@/assets/realisation-03.jpg";
