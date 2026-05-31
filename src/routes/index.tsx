@@ -378,13 +378,13 @@ function Index() {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
               <div>
-                <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4">Nos réalisations</p>
+                <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4">Nos spécialités</p>
                 <h2 className="font-display text-4xl md:text-6xl text-primary-foreground text-balance leading-tight">
-                  Découvrez<br />nos réalisations
+                  Galerie<br />des spécialités
                 </h2>
               </div>
               <p className="max-w-md text-primary-foreground/60 leading-relaxed">
-                Plus de 36 ans d'expérience au service de vos événements à Avignon et dans toute la région.
+                Cinq cuisines, vingt-cinq plats emblématiques préparés avec passion et savoir-faire.
               </p>
             </div>
           </Reveal>
@@ -407,27 +407,43 @@ function Index() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {realisations.map((r, i) => (
-              <Reveal key={i} delay={(i % 3) * 100}>
-                <figure className="group relative overflow-hidden bg-card shadow-elegant transition-smooth hover:shadow-soft hover:-translate-y-1">
-                  <div className="overflow-hidden aspect-[4/5]">
-                    <img
-                      src={r.src}
-                      alt={r.title}
-                      loading="lazy"
-                      width={1024}
-                      height={1280}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+          <div className="space-y-24 md:space-y-32">
+            {cuisines.map((cuisine) => (
+              <div key={cuisine.name}>
+                <Reveal>
+                  <div className="flex items-center gap-6 mb-12">
+                    <div className="h-px flex-1 bg-gold/30" />
+                    <div className="text-center">
+                      <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-2">{cuisine.tagline}</p>
+                      <h3 className="font-display text-3xl md:text-4xl text-primary-foreground">{cuisine.name}</h3>
+                    </div>
+                    <div className="h-px flex-1 bg-gold/30" />
                   </div>
-                  <figcaption className="p-6 border-t border-border">
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-primary mb-2">Réalisation {String(i + 1).padStart(2, "0")}</p>
-                    <h3 className="font-display text-xl text-foreground leading-snug">{r.title}</h3>
-                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-                  </figcaption>
-                </figure>
-              </Reveal>
+                </Reveal>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
+                  {cuisine.dishes.map((dish, i) => (
+                    <Reveal key={dish.title} delay={(i % 5) * 80}>
+                      <figure className="group relative overflow-hidden bg-card shadow-elegant transition-smooth hover:shadow-soft hover:-translate-y-1 h-full flex flex-col">
+                        <div className="overflow-hidden aspect-square">
+                          <img
+                            src={dish.src}
+                            alt={dish.title}
+                            loading="lazy"
+                            width={800}
+                            height={800}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                        </div>
+                        <figcaption className="p-5 border-t border-border flex-1 flex flex-col">
+                          <h4 className="font-display text-lg text-foreground leading-snug">{dish.title}</h4>
+                          <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{dish.desc}</p>
+                        </figcaption>
+                      </figure>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
