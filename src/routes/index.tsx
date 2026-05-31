@@ -29,11 +29,6 @@ import r22 from "@/assets/realisation-22.jpg";
 import r23 from "@/assets/realisation-23.jpg";
 import r24 from "@/assets/realisation-24.jpg";
 import r25 from "@/assets/realisation-25.jpg";
-import r26 from "@/assets/realisation-26.jpg";
-import r27 from "@/assets/realisation-27.jpg";
-import r28 from "@/assets/realisation-28.jpg";
-import r29 from "@/assets/realisation-29.jpg";
-import r30 from "@/assets/realisation-30.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
