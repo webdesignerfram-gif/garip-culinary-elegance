@@ -29,11 +29,6 @@ import r22 from "@/assets/realisation-22.jpg";
 import r23 from "@/assets/realisation-23.jpg";
 import r24 from "@/assets/realisation-24.jpg";
 import r25 from "@/assets/realisation-25.jpg";
-import r26 from "@/assets/realisation-26.jpg";
-import r27 from "@/assets/realisation-27.jpg";
-import r28 from "@/assets/realisation-28.jpg";
-import r29 from "@/assets/realisation-29.jpg";
-import r30 from "@/assets/realisation-30.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -189,37 +184,62 @@ const trust = [
   { icon: ShieldCheck, value: "Halal & Casher", label: "Cuisine certifiée" },
 ];
 
-const realisations = [
-  { src: r01, title: "\u200BMariage haut de gamme à Avignon", desc: "\u200B" },
-  { src: r02, title: "Buffet méditerranéen sur mesure", desc: "Une sélection de mezze, grillades et spécialités préparée selon les envies de nos clients." },
-  { src: r03, title: "Réception familiale réussie", desc: "Des moments chaleureux célébrés autour d'une cuisine généreuse et conviviale." },
-  { src: r04, title: "Saveurs de la Méditerranée", desc: "Un voyage gustatif entre traditions turques, libanaises, grecques et arméniennes." },
-  { src: r05, title: "Événement d'entreprise", desc: "Une prestation clé en main pour séminaires, lancements et cocktails professionnels." },
-  { src: r06, title: "Cuisine traditionnelle turque", desc: "Kebabs, pides et mezze préparés dans le plus pur respect de la tradition turque." },
-  { src: r07, title: "Buffet oriental raffiné", desc: "Une présentation élégante associant saveurs orientales et finitions soignées." },
-  { src: r08, title: "Réception privée élégante", desc: "Un service discret et professionnel pour des soirées intimes et mémorables." },
-  { src: r09, title: "Notre savoir-faire depuis 36 ans", desc: "Trois décennies d'expérience au service de la gastronomie méditerranéenne." },
-  { src: r10, title: "Des moments de partage inoubliables", desc: "Une cuisine pensée pour rassembler et créer des souvenirs durables." },
-  { src: r11, title: "Buffet de mariage personnalisé", desc: "Chaque menu est composé sur mesure pour refléter votre histoire et vos traditions." },
-  { src: r12, title: "Cuisine authentique libanaise", desc: "Houmous, taboulé, kebbés et grillades préparés selon les recettes familiales." },
-  { src: r13, title: "Réception prestigieuse", desc: "Une organisation millimétrée et une présentation digne des plus grandes maisons." },
-  { src: r14, title: "Soirée privée sur mesure", desc: "Un accompagnement personnalisé pour des événements uniques et raffinés." },
-  { src: r15, title: "Événement professionnel réussi", desc: "Une logistique maîtrisée pour des réceptions d'entreprise sans fausse note." },
-  { src: r16, title: "Buffet gourmand méditerranéen", desc: "Une abondance de couleurs et de saveurs pour ravir tous les convives." },
-  { src: r17, title: "L'art de recevoir", desc: "Un service traiteur attentif aux moindres détails de votre événement." },
-  { src: r18, title: "Une cuisine faite avec passion", desc: "Des plats préparés chaque jour avec des produits frais et soigneusement sélectionnés." },
-  { src: r19, title: "Réception familiale chaleureuse", desc: "Une cuisine généreuse pour célébrer en famille les grands moments de la vie." },
-  { src: r20, title: "Créations culinaires raffinées", desc: "Des dressages élégants alliant tradition méditerranéenne et modernité." },
-  { src: r21, title: "Mariage d'exception", desc: "Un menu d'honneur conçu pour marquer durablement vos invités." },
-  { src: r22, title: "Buffet généreux et élégant", desc: "Une présentation soignée pour des buffets aussi beaux que savoureux." },
-  { src: r23, title: "Une tradition depuis 36 ans", desc: "Un héritage culinaire transmis avec exigence de génération en génération." },
-  { src: r24, title: "Cuisine grecque authentique", desc: "Moussaka, souvlaki et spécialités helléniques préparés dans la pure tradition." },
-  { src: r25, title: "Saveurs arméniennes traditionnelles", desc: "Grillades, lavash et spécialités arméniennes pour un voyage culinaire unique." },
-  { src: r26, title: "Réception clé en main", desc: "De la création du menu au service à table, nous prenons tout en charge." },
-  { src: r27, title: "Événement mémorable", desc: "Une prestation qui marque les esprits par sa qualité et son authenticité." },
-  { src: r28, title: "Buffet premium", desc: "Une sélection haut de gamme pour des événements à la hauteur de vos exigences." },
-  { src: r29, title: "Excellence culinaire", desc: "Un savoir-faire reconnu et plébiscité par plus de 103 avis clients." },
-  { src: r30, title: "Des prestations sur mesure", desc: "Chaque événement est unique, chaque menu est pensé spécialement pour vous." },
+const cuisines = [
+  {
+    name: "Cuisine méditerranéenne",
+    tagline: "Soleil, fraîcheur et générosité",
+    dishes: [
+      { src: r01, title: "Paëlla méditerranéenne", desc: "Riz safrané, fruits de mer et légumes du soleil, mijotés à la perfection." },
+      { src: r02, title: "Plateau de mezze", desc: "Une mosaïque de petites bouchées colorées, fraîches et parfumées." },
+      { src: r03, title: "Dorade grillée", desc: "Poisson noble cuit entier, relevé d'herbes aromatiques et d'huile d'olive." },
+      { src: r04, title: "Grillades méditerranéennes", desc: "Viandes marinées et légumes du soleil cuits sur la braise." },
+      { src: r05, title: "Fruits de mer méditerranéens", desc: "Sélection de produits de la mer préparés simplement pour révéler leurs saveurs." },
+    ],
+  },
+  {
+    name: "Cuisine turque",
+    tagline: "L'héritage ottoman dans l'assiette",
+    dishes: [
+      { src: r06, title: "Iskender kebab", desc: "Fines lamelles d'agneau servies sur pain plat, sauce tomate et yaourt." },
+      { src: r07, title: "Adana kebab", desc: "Brochette de viande hachée épicée, grillée selon la tradition d'Adana." },
+      { src: r08, title: "Lahmacun", desc: "Fine galette croustillante garnie de viande hachée et d'herbes fraîches." },
+      { src: r09, title: "Pide", desc: "Pain turc en forme de barque garni de fromage, viande ou légumes." },
+      { src: r10, title: "Baklava", desc: "Pâtisserie feuilletée aux noix et au sirop, emblème de la tradition turque." },
+    ],
+  },
+  {
+    name: "Cuisine libanaise",
+    tagline: "L'art du partage à l'orientale",
+    dishes: [
+      { src: r11, title: "Houmous", desc: "Crème onctueuse de pois chiches au tahini, citron et huile d'olive." },
+      { src: r12, title: "Taboulé", desc: "Salade fraîche de persil, menthe, tomate et boulgour finement coupés." },
+      { src: r13, title: "Shawarma", desc: "Viande marinée rôtie à la broche, servie avec crudités et sauces." },
+      { src: r14, title: "Falafels", desc: "Petites boulettes de pois chiches aux herbes, frites et croustillantes." },
+      { src: r15, title: "Kebbé", desc: "Croquettes de boulgour farcies à la viande hachée et aux pignons." },
+    ],
+  },
+  {
+    name: "Cuisine grecque",
+    tagline: "Les saveurs des îles helléniques",
+    dishes: [
+      { src: r16, title: "Moussaka", desc: "Gratin d'aubergines, viande hachée et béchamel, parfumé à la cannelle." },
+      { src: r17, title: "Gyros", desc: "Viande rôtie à la broche servie en pita avec tzatziki et crudités." },
+      { src: r18, title: "Souvlaki", desc: "Petites brochettes de viande marinée grillées à la flamme." },
+      { src: r19, title: "Tzatziki", desc: "Sauce fraîche au yaourt, concombre, ail et menthe." },
+      { src: r20, title: "Spanakopita", desc: "Feuilleté croustillant aux épinards et à la feta." },
+    ],
+  },
+  {
+    name: "Cuisine arménienne",
+    tagline: "Tradition et raffinement du Caucase",
+    dishes: [
+      { src: r21, title: "Khorovats", desc: "Grillades arméniennes de viandes marinées cuites au feu de bois." },
+      { src: r22, title: "Dolma arménien", desc: "Feuilles de vigne farcies au riz, herbes et viande, mijotées lentement." },
+      { src: r23, title: "Manti arménien", desc: "Petits raviolis fourrés à la viande, servis avec yaourt et beurre épicé." },
+      { src: r24, title: "Lavash", desc: "Pain fin traditionnel arménien, cuit au tonir et inscrit à l'Unesco." },
+      { src: r25, title: "Gata", desc: "Brioche feuilletée sucrée, parfumée et délicatement dorée." },
+    ],
+  },
 ];
 
 const reviews = [
@@ -353,13 +373,13 @@ function Index() {
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
               <div>
-                <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4">Nos réalisations</p>
+                <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4">Nos spécialités</p>
                 <h2 className="font-display text-4xl md:text-6xl text-primary-foreground text-balance leading-tight">
-                  Découvrez<br />nos réalisations
+                  Galerie<br />des spécialités
                 </h2>
               </div>
               <p className="max-w-md text-primary-foreground/60 leading-relaxed">
-                Plus de 36 ans d'expérience au service de vos événements à Avignon et dans toute la région.
+                Cinq cuisines, vingt-cinq plats emblématiques préparés avec passion et savoir-faire.
               </p>
             </div>
           </Reveal>
@@ -382,27 +402,43 @@ function Index() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {realisations.map((r, i) => (
-              <Reveal key={i} delay={(i % 3) * 100}>
-                <figure className="group relative overflow-hidden bg-card shadow-elegant transition-smooth hover:shadow-soft hover:-translate-y-1">
-                  <div className="overflow-hidden aspect-[4/5]">
-                    <img
-                      src={r.src}
-                      alt={r.title}
-                      loading="lazy"
-                      width={1024}
-                      height={1280}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+          <div className="space-y-24 md:space-y-32">
+            {cuisines.map((cuisine) => (
+              <div key={cuisine.name}>
+                <Reveal>
+                  <div className="flex items-center gap-6 mb-12">
+                    <div className="h-px flex-1 bg-gold/30" />
+                    <div className="text-center">
+                      <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-2">{cuisine.tagline}</p>
+                      <h3 className="font-display text-3xl md:text-4xl text-primary-foreground">{cuisine.name}</h3>
+                    </div>
+                    <div className="h-px flex-1 bg-gold/30" />
                   </div>
-                  <figcaption className="p-6 border-t border-border">
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-primary mb-2">Réalisation {String(i + 1).padStart(2, "0")}</p>
-                    <h3 className="font-display text-xl text-foreground leading-snug">{r.title}</h3>
-                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-                  </figcaption>
-                </figure>
-              </Reveal>
+                </Reveal>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
+                  {cuisine.dishes.map((dish, i) => (
+                    <Reveal key={dish.title} delay={(i % 5) * 80}>
+                      <figure className="group relative overflow-hidden bg-card shadow-elegant transition-smooth hover:shadow-soft hover:-translate-y-1 h-full flex flex-col">
+                        <div className="overflow-hidden aspect-square">
+                          <img
+                            src={dish.src}
+                            alt={dish.title}
+                            loading="lazy"
+                            width={800}
+                            height={800}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                        </div>
+                        <figcaption className="p-5 border-t border-border flex-1 flex flex-col">
+                          <h4 className="font-display text-lg text-foreground leading-snug">{dish.title}</h4>
+                          <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{dish.desc}</p>
+                        </figcaption>
+                      </figure>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
