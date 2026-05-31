@@ -107,15 +107,15 @@ export const Route = createFileRoute("/")({
           },
           {
             "@type": "Review",
-            author: { "@type": "Person", name: "Mehmet K." },
+            author: { "@type": "Person", name: "\u200B\n\n\nAlexis Midol-Monnet" },
             reviewRating: { "@type": "Rating", ratingValue: "5" },
-            reviewBody: "Des saveurs méditerranéennes authentiques et une équipe très professionnelle.",
+            reviewBody: "Excellents produits et de l'originalité par rapport aux \"libanais\" classiques, service très rapide et bonne humeur !\n\nL'indispensable pour une pause rapide en été à Avignon sans se ruiner.",
           },
           {
             "@type": "Review",
-            author: { "@type": "Person", name: "Sophie L." },
+            author: { "@type": "Person", name: "\u200BEmilie Menard" },
             reviewRating: { "@type": "Rating", ratingValue: "5" },
-            reviewBody: "Le meilleur traiteur oriental et méditerranéen d'Avignon.",
+            reviewBody: "​Depuis qq temps je viens me régaler chez Garip! Un bonheur pour les papilles, il y a beaucoup de choix de plats  végétariens ou carnés, à emporter ou sur place. ",
           },
           {
             "@type": "Review",
@@ -229,18 +229,18 @@ const reviews = [
     text: "Beaucoup de choix venant de différentes cultures culinaires, le tout de qualité. De passage sur Avignon je n'ai fais que d'y retourner tellement il y a de choses à découvrir et à déguster",
   },
   {
-    name: "Mehmet K.",
-    event: "Événement privé",
-    text: "Des saveurs méditerranéennes authentiques et une équipe très professionnelle.",
+    name: "\u200B\n\n\nAlexis Midol-Monnet",
+    event: "​",
+    text: "Excellents produits et de l'originalité par rapport aux \"libanais\" classiques, service très rapide et bonne humeur !\n\nL'indispensable pour une pause rapide en été à Avignon sans se ruiner.",
   },
   {
-    name: "Sophie L.",
-    event: "Client fidèle · Avignon",
-    text: "Le meilleur traiteur oriental et méditerranéen d'Avignon.",
+    name: "\u200BEmilie Menard",
+    event: "​",
+    text: "​Depuis qq temps je viens me régaler chez Garip! Un bonheur pour les papilles, il y a beaucoup de choix de plats  végétariens ou carnés, à emporter ou sur place. ",
   },
   {
     name: "Antoine D.",
-    event: "Réception d'entreprise · Vaucluse",
+    event: "​",
     text: "Un buffet magnifique, varié et raffiné. Tous nos invités nous ont félicités pour le choix du traiteur.",
   },
 ];
