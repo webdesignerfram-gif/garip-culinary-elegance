@@ -101,9 +101,9 @@ export const Route = createFileRoute("/")({
         review: [
           {
             "@type": "Review",
-            author: { "@type": "Person", name: "Camille R." },
+            author: { "@type": "Person", name: "JF Faniel" },
             reviewRating: { "@type": "Rating", ratingValue: "5" },
-            reviewBody: "Une expérience exceptionnelle pour notre mariage, des plats incroyables et un service irréprochable.",
+            reviewBody: "Beaucoup de choix venant de différentes cultures culinaires, le tout de qualité. De passage sur Avignon je n'ai fais que d'y retourner tellement il y a de choses à découvrir et à déguster",
           },
           {
             "@type": "Review",
@@ -224,9 +224,9 @@ const realisations = [
 
 const reviews = [
   {
-    name: "Camille R.",
-    event: "Mariage · Avignon",
-    text: "Une expérience exceptionnelle pour notre mariage, des plats incroyables et un service irréprochable.",
+    name: "JF Faniel",
+    event: "​",
+    text: "Beaucoup de choix venant de différentes cultures culinaires, le tout de qualité. De passage sur Avignon je n'ai fais que d'y retourner tellement il y a de choses à découvrir et à déguster",
   },
   {
     name: "Mehmet K.",
