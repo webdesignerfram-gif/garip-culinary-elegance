@@ -402,27 +402,44 @@ function Index() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {realisations.map((r, i) => (
-              <Reveal key={i} delay={(i % 3) * 100}>
-                <figure className="group relative overflow-hidden bg-card shadow-elegant transition-smooth hover:shadow-soft hover:-translate-y-1">
-                  <div className="overflow-hidden aspect-[4/5]">
-                    <img
-                      src={r.src}
-                      alt={r.title}
-                      loading="lazy"
-                      width={1024}
-                      height={1280}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+          <div className="space-y-24 md:space-y-32">
+            {cuisines.map((cuisine) => (
+              <div key={cuisine.name}>
+                <Reveal>
+                  <div className="text-center mb-12 md:mb-16">
+                    <div className="mx-auto w-12 h-px bg-gold mb-6" />
+                    <h3 className="font-display text-3xl md:text-5xl text-primary-foreground leading-tight">
+                      {cuisine.name}
+                    </h3>
+                    <p className="mt-4 text-sm md:text-base text-primary-foreground/60 italic">
+                      {cuisine.tagline}
+                    </p>
                   </div>
-                  <figcaption className="p-6 border-t border-border">
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-primary mb-2">Réalisation {String(i + 1).padStart(2, "0")}</p>
-                    <h3 className="font-display text-xl text-foreground leading-snug">{r.title}</h3>
-                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-                  </figcaption>
-                </figure>
-              </Reveal>
+                </Reveal>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                  {cuisine.dishes.map((dish, i) => (
+                    <Reveal key={dish.title} delay={(i % 3) * 100}>
+                      <figure className="group relative overflow-hidden bg-card shadow-elegant transition-smooth hover:shadow-soft hover:-translate-y-1">
+                        <div className="overflow-hidden aspect-[4/5]">
+                          <img
+                            src={dish.src}
+                            alt={dish.title}
+                            loading="lazy"
+                            width={1024}
+                            height={1280}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                        </div>
+                        <figcaption className="p-6 border-t border-border">
+                          <p className="text-[10px] tracking-[0.3em] uppercase text-primary mb-2">Spécialité {String(i + 1).padStart(2, "0")}</p>
+                          <h4 className="font-display text-xl text-foreground leading-snug">{dish.title}</h4>
+                          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{dish.desc}</p>
+                        </figcaption>
+                      </figure>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
