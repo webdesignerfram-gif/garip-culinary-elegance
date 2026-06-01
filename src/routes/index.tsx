@@ -184,37 +184,62 @@ const trust = [
   { icon: ShieldCheck, value: "Halal & Casher", label: "Cuisine certifiée" },
 ];
 
-const realisations = [
-  { src: r01, title: "\u200BMariage haut de gamme à Avignon", desc: "\u200B" },
-  { src: r02, title: "Buffet méditerranéen sur mesure", desc: "Une sélection de mezze, grillades et spécialités préparée selon les envies de nos clients." },
-  { src: r03, title: "Réception familiale réussie", desc: "Des moments chaleureux célébrés autour d'une cuisine généreuse et conviviale." },
-  { src: r04, title: "Saveurs de la Méditerranée", desc: "Un voyage gustatif entre traditions turques, libanaises, grecques et arméniennes." },
-  { src: r05, title: "Événement d'entreprise", desc: "Une prestation clé en main pour séminaires, lancements et cocktails professionnels." },
-  { src: r06, title: "Cuisine traditionnelle turque", desc: "Kebabs, pides et mezze préparés dans le plus pur respect de la tradition turque." },
-  { src: r07, title: "Buffet oriental raffiné", desc: "Une présentation élégante associant saveurs orientales et finitions soignées." },
-  { src: r08, title: "Réception privée élégante", desc: "Un service discret et professionnel pour des soirées intimes et mémorables." },
-  { src: r09, title: "Notre savoir-faire depuis 36 ans", desc: "Trois décennies d'expérience au service de la gastronomie méditerranéenne." },
-  { src: r10, title: "Des moments de partage inoubliables", desc: "Une cuisine pensée pour rassembler et créer des souvenirs durables." },
-  { src: r11, title: "Buffet de mariage personnalisé", desc: "Chaque menu est composé sur mesure pour refléter votre histoire et vos traditions." },
-  { src: r12, title: "Cuisine authentique libanaise", desc: "Houmous, taboulé, kebbés et grillades préparés selon les recettes familiales." },
-  { src: r13, title: "Réception prestigieuse", desc: "Une organisation millimétrée et une présentation digne des plus grandes maisons." },
-  { src: r14, title: "Soirée privée sur mesure", desc: "Un accompagnement personnalisé pour des événements uniques et raffinés." },
-  { src: r15, title: "Événement professionnel réussi", desc: "Une logistique maîtrisée pour des réceptions d'entreprise sans fausse note." },
-  { src: r16, title: "Buffet gourmand méditerranéen", desc: "Une abondance de couleurs et de saveurs pour ravir tous les convives." },
-  { src: r17, title: "L'art de recevoir", desc: "Un service traiteur attentif aux moindres détails de votre événement." },
-  { src: r18, title: "Une cuisine faite avec passion", desc: "Des plats préparés chaque jour avec des produits frais et soigneusement sélectionnés." },
-  { src: r19, title: "Réception familiale chaleureuse", desc: "Une cuisine généreuse pour célébrer en famille les grands moments de la vie." },
-  { src: r20, title: "Créations culinaires raffinées", desc: "Des dressages élégants alliant tradition méditerranéenne et modernité." },
-  { src: r21, title: "Mariage d'exception", desc: "Un menu d'honneur conçu pour marquer durablement vos invités." },
-  { src: r22, title: "Buffet généreux et élégant", desc: "Une présentation soignée pour des buffets aussi beaux que savoureux." },
-  { src: r23, title: "Une tradition depuis 36 ans", desc: "Un héritage culinaire transmis avec exigence de génération en génération." },
-  { src: r24, title: "Cuisine grecque authentique", desc: "Moussaka, souvlaki et spécialités helléniques préparés dans la pure tradition." },
-  { src: r25, title: "Saveurs arméniennes traditionnelles", desc: "Grillades, lavash et spécialités arméniennes pour un voyage culinaire unique." },
-  { src: r26, title: "Réception clé en main", desc: "De la création du menu au service à table, nous prenons tout en charge." },
-  { src: r27, title: "Événement mémorable", desc: "Une prestation qui marque les esprits par sa qualité et son authenticité." },
-  { src: r28, title: "Buffet premium", desc: "Une sélection haut de gamme pour des événements à la hauteur de vos exigences." },
-  { src: r29, title: "Excellence culinaire", desc: "Un savoir-faire reconnu et plébiscité par plus de 103 avis clients." },
-  { src: r30, title: "Des prestations sur mesure", desc: "Chaque événement est unique, chaque menu est pensé spécialement pour vous." },
+const cuisines = [
+  {
+    name: "Cuisine Méditerranéenne",
+    tagline: "Soleil, herbes fraîches et produits de la mer",
+    dishes: [
+      { src: r01, title: "Couscous Royal", desc: "Semoule fine, légumes mijotés et viandes grillées dans la pure tradition méditerranéenne." },
+      { src: r02, title: "Plateau de Mezze", desc: "Une sélection généreuse de petites entrées à partager, fraîches et parfumées." },
+      { src: r03, title: "Grillades Méditerranéennes", desc: "Viandes marinées aux herbes et grillées au feu de bois pour des saveurs authentiques." },
+      { src: r04, title: "Dorade Grillée", desc: "Poisson frais grillé entier, citron confit et huile d'olive vierge extra." },
+      { src: r05, title: "Paëlla Méditerranéenne", desc: "Riz safrané, fruits de mer et légumes du soleil cuisinés à la minute." },
+    ],
+  },
+  {
+    name: "Cuisine Turque",
+    tagline: "L'héritage culinaire d'Anatolie",
+    dishes: [
+      { src: r06, title: "Iskender Kebab", desc: "Fines lamelles d'agneau grillé nappées de sauce tomate, yaourt et beurre fondu." },
+      { src: r07, title: "Adana Kebab", desc: "Brochette d'agneau haché épicé, grillée au charbon de bois à la mode d'Adana." },
+      { src: r08, title: "Pide", desc: "Pain plat turc garni de viande, fromage ou légumes, cuit au four traditionnel." },
+      { src: r09, title: "Lahmacun", desc: "Fine galette croustillante recouverte de viande hachée épicée et d'herbes fraîches." },
+      { src: r10, title: "Baklava", desc: "Pâte filo croustillante, pistaches concassées et sirop parfumé à la fleur d'oranger." },
+    ],
+  },
+  {
+    name: "Cuisine Libanaise",
+    tagline: "Mezzés, herbes fraîches et générosité du Levant",
+    dishes: [
+      { src: r11, title: "Houmous", desc: "Purée onctueuse de pois chiches, tahini, citron et huile d'olive vierge." },
+      { src: r12, title: "Taboulé", desc: "Persil plat finement ciselé, boulgour, tomates, menthe et jus de citron." },
+      { src: r13, title: "Shawarma", desc: "Viande marinée cuite à la broche verticale, servie en sandwich ou en assiette." },
+      { src: r14, title: "Falafels", desc: "Boulettes croustillantes de pois chiches et fèves aux herbes, frites à la minute." },
+      { src: r15, title: "Kebbé", desc: "Croquettes de boulgour farcies de viande hachée et de pignons, dorées au four." },
+    ],
+  },
+  {
+    name: "Cuisine Grecque",
+    tagline: "Saveurs helléniques et tradition insulaire",
+    dishes: [
+      { src: r16, title: "Moussaka", desc: "Gratin d'aubergines, viande hachée et béchamel parfumée à la noix de muscade." },
+      { src: r17, title: "Gyros", desc: "Viande grillée à la broche, tzatziki, tomate et oignon dans un pain pita moelleux." },
+      { src: r18, title: "Souvlaki", desc: "Brochettes de viande marinée à l'origan et au citron, grillées au charbon." },
+      { src: r19, title: "Tzatziki", desc: "Yaourt grec onctueux, concombre râpé, ail et aneth pour accompagner grillades et mezzés." },
+      { src: r20, title: "Spanakopita", desc: "Feuilleté croustillant d'épinards et de feta enveloppé de pâte filo dorée." },
+    ],
+  },
+  {
+    name: "Cuisine Arménienne",
+    tagline: "Tradition millénaire des hauts plateaux",
+    dishes: [
+      { src: r21, title: "Khorovats", desc: "Grillades arméniennes de viande marinée, cuites au feu de bois selon la tradition." },
+      { src: r22, title: "Dolma Arménien", desc: "Feuilles de vigne farcies au riz, herbes fraîches et viande finement hachée." },
+      { src: r23, title: "Manti Arménien", desc: "Petits raviolis de viande au four servis avec yaourt à l'ail et beurre épicé." },
+      { src: r24, title: "Lavash", desc: "Pain traditionnel arménien fin et souple, cuit dans un four tonir." },
+      { src: r25, title: "Gata", desc: "Pâtisserie feuilletée arménienne au cœur fondant, beurrée et délicatement sucrée." },
+    ],
+  },
 ];
 
 const reviews = [
