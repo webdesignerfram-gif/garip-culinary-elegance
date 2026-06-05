@@ -219,7 +219,7 @@ const realisations = [
   { src: r27, title: "Ce dont on parle encore le lendemain", desc: "Une prestation qui laisse une impression durable, bien après que les lumières se sont éteintes." },
   { src: r28, title: "Quand l'exigence devient évidence", desc: "Un niveau de soin et de présentation pensé pour ceux qui ne veulent faire aucune concession." },
   { src: r29, title: "Plus de 100 fois, ils ont fait confiance", desc: "Un savoir-faire reconnu, plébiscité par des centaines de clients qui reviennent et recommandent." },
-  { src: r30, title: "Des prestations sur mesure", desc: "Chaque événement est unique, chaque menu est pensé spécialement pour vous." },
+  { src: r30, title: "Rien de standard, tout sur mesure", desc: "​Chaque événement est pensé depuis le début comme s'il n'en existait aucun autre." },
 ];
 
 const reviews = [
