@@ -201,7 +201,7 @@ const realisations = [
   { src: r09, title: "36 ans à mettre du cœur dans chaque service", desc: "Une expérience forgée dans la passion, au fil de milliers de tablées heureuses." },
   { src: r10, title: "Les instants qui restent", desc: "Une cuisine pensée pour créer du lien, bien après que les assiettes sont vidées." },
   { src: r11, title: "Votre histoire, servie à table", desc: "Un menu façonné autour de ce qui vous ressemble, pour un jour qui ne ressemble qu'à vous." },
-  { src: r12, title: "Cuisine authentique libanaise", desc: "Houmous, taboulé, kebbés et grillades préparés selon les recettes familiales." },
+  { src: r12, title: "L'héritage d'une cuisine vivante", desc: "Des saveurs ancrées dans la mémoire, portées par des mains qui en connaissent chaque secret." },
   { src: r13, title: "Réception prestigieuse", desc: "Une organisation millimétrée et une présentation digne des plus grandes maisons." },
   { src: r14, title: "Soirée privée sur mesure", desc: "Un accompagnement personnalisé pour des événements uniques et raffinés." },
   { src: r15, title: "Événement professionnel réussi", desc: "Une logistique maîtrisée pour des réceptions d'entreprise sans fausse note." },
