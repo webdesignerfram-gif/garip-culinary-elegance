@@ -3,6 +3,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
 import { Check, ArrowRight } from "lucide-react";
+import gMezze from "@/assets/gallery-mezze.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
