@@ -213,12 +213,12 @@ const realisations = [
   { src: r21, title: "Un jour qui mérite le meilleur", desc: "Une attention portée à chaque convive, pour que le souvenir reste longtemps après le dernier verre." },
   { src: r22, title: "L'élégance dans l'abondance", desc: "Un buffet pensé pour impressionner dès le regard et séduire à chaque bouchée." },
   { src: r23, title: "Ce qui se transmet ne se perd jamais", desc: "Une cuisine ancrée dans le temps, portée par 36 ans d'exigence et de fidélité aux origines." },
-  { src: r24, title: "Cuisine grecque authentique", desc: "Moussaka, souvlaki et spécialités helléniques préparés dans la pure tradition." },
-  { src: r25, title: "Saveurs arméniennes traditionnelles", desc: "Grillades, lavash et spécialités arméniennes pour un voyage culinaire unique." },
-  { src: r26, title: "Réception clé en main", desc: "De la création du menu au service à table, nous prenons tout en charge." },
-  { src: r27, title: "Événement mémorable", desc: "Une prestation qui marque les esprits par sa qualité et son authenticité." },
-  { src: r28, title: "Buffet premium", desc: "Une sélection haut de gamme pour des événements à la hauteur de vos exigences." },
-  { src: r29, title: "Excellence culinaire", desc: "Un savoir-faire reconnu et plébiscité par plus de 103 avis clients." },
+  { src: r24, title: "Les racines ont un goût incomparable", desc: "Des recettes qui traversent les générations, préparées avec le respect de ceux qui les ont inventées." },
+  { src: r25, title: "Là où chaque bouchée raconte une histoire", desc: "Des saveurs venues de loin, préparées avec la fierté de ceux qui les portent depuis toujours." },
+  { src: r26, title: "Vous n'avez qu'à profiter", desc: "Du premier appel jusqu'au dernier invité servi, tout est pris en charge avec soin et précision." },
+  { src: r27, title: "Ce dont on parle encore le lendemain", desc: "Une prestation qui laisse une impression durable, bien après que les lumières se sont éteintes." },
+  { src: r28, title: "Quand l'exigence devient évidence", desc: "Un niveau de soin et de présentation pensé pour ceux qui ne veulent faire aucune concession." },
+  { src: r29, title: "Plus de 100 fois, ils ont fait confiance", desc: "Un savoir-faire reconnu, plébiscité par des centaines de clients qui reviennent et recommandent." },
   { src: r30, title: "Des prestations sur mesure", desc: "Chaque événement est unique, chaque menu est pensé spécialement pour vous." },
 ];
 
