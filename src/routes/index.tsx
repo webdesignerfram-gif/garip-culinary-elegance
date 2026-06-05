@@ -203,7 +203,7 @@ const realisations = [
   { src: r11, title: "Votre histoire, servie à table", desc: "Un menu façonné autour de ce qui vous ressemble, pour un jour qui ne ressemble qu'à vous." },
   { src: r12, title: "L'héritage d'une cuisine vivante", desc: "Des saveurs ancrées dans la mémoire, portées par des mains qui en connaissent chaque secret." },
   { src: r13, title: "La générosité comme art de vivre", desc: "​Une table pensée dans ses moindres détails, où l'abondance rime avec tenue et élégance." },
-  { src: r14, title: "Soirée privée sur mesure", desc: "Un accompagnement personnalisé pour des événements uniques et raffinés." },
+  { src: r14, title: "On ne confie pas ça à n'importe qui", desc: "Chaque prestation est préparée avec rigueur et sincérité  la qualité ne s'improvise pas, elle se construit." },
   { src: r15, title: "La rigueur au service de l'élégance", desc: "Chaque assiette portée avec la précision d'un professionnel qui ne laisse rien au hasard." },
   { src: r16, title: "Une fête pour les yeux et pour l'âme", desc: "Un buffet généreux qui fait tourner les têtes dès l'entrée et régale jusqu'au bout." },
   { src: r17, title: "Mille détails, zéro fausse note", desc: "Un service orchestré avec soin, où chaque élément trouve sa place avant même que les invités arrivent." },
