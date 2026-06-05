@@ -191,11 +191,11 @@ const trust = [
 
 const realisations = [
   { src: r01, title: "Une journée gravée dans les mémoires", desc: "​Des pièces soignées, dressées avec minutie, qui racontent l'élégance d'un grand jour." },
-  { src: r02, title: "Buffet méditerranéen sur mesure", desc: "Une sélection de mezze, grillades et spécialités préparée selon les envies de nos clients." },
-  { src: r03, title: "Réception familiale réussie", desc: "Des moments chaleureux célébrés autour d'une cuisine généreuse et conviviale." },
+  { src: r02, title: "L'art de la table ouverte", desc: "Une table généreuse où l'abondance et les couleurs invitent au partage et à la convivialité." },
+  { src: r03, title: "​Quand la famille se retrouve", desc: "Des instants chaleureux autour d'une cuisine sincère, faite pour rassembler." },
   { src: r04, title: "Une ode aux horizons lointains", desc: "Un voyage entre plusieurs rives, servi en grandes tablées, fidèle aux savoir-faire d'origine." },
   { src: r05, title: "​Le détail qui fait la différence", desc: "Une prestation pensée pour impressionner, du dressage jusqu'au dernier invité servi." },
-  { src: r06, title: "Cuisine traditionnelle turque", desc: "Kebabs, pides et mezze préparés dans le plus pur respect de la tradition turque." },
+  { src: r06, title: "La force d'une tradition vivante", desc: "Des recettes transmises de génération en génération, préparées dans le respect de l'authenticité.\n" },
   { src: r07, title: "Buffet oriental raffiné", desc: "Une présentation élégante associant saveurs orientales et finitions soignées." },
   { src: r08, title: "Réception privée élégante", desc: "Un service discret et professionnel pour des soirées intimes et mémorables." },
   { src: r09, title: "Notre savoir-faire depuis 36 ans", desc: "Trois décennies d'expérience au service de la gastronomie méditerranéenne." },
