@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Traiteur Garip — 36 ans d'excellence culinaire méditerranéenne" },
-      { name: "description", content: "Traiteur méditerranéen, turc, libanais, grec et arménien. Mariages, événements d'entreprise, réceptions sur mesure. Halal, casher, végétarien, vegan." },
+      { name: "description", content: "Traiteur méditerranéen, turc, libanais, grec et arménien. Mariages, événements d'entreprise, réceptions sur mesure. Halal, casher, végétarien." },
       { property: "og:title", content: "Traiteur Garip — Traiteur méditerranéen haut de gamme" },
       { property: "og:description", content: "36 ans d'excellence. Cuisine méditerranéenne, turque, libanaise, grecque, arménienne pour tous vos événements." },
       { property: "og:url", content: "/" },
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/")({
         "@type": ["LocalBusiness", "FoodEstablishment"],
         "@id": "https://traiteurdegarip.fr/#business",
         name: "Traiteur Garip",
-        description: "Traiteur méditerranéen, turc, libanais, grec et arménien à Avignon depuis 36 ans. Service traiteur halal, casher, végétarien et vegan pour mariages, événements d'entreprise et réceptions privées.",
+        description: "Traiteur méditerranéen, turc, libanais, grec et arménien à Avignon depuis 36 ans. Service traiteur halal, casher, et végétarien pour mariages, événements d'entreprise et réceptions privées.",
         url: "https://traiteurdegarip.fr",
         telephone: "+33490331749",
         email: "garip7968@hotmail.fr",
@@ -164,7 +164,7 @@ export const Route = createFileRoute("/")({
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Menu végétarien & vegan",
+                name: "Menu végétarien",
                 description: "Menus 100 % végétaux sans compromis sur la saveur ni l'authenticité.",
               },
             },
