@@ -190,11 +190,11 @@ const trust = [
 ];
 
 const realisations = [
-  { src: r01, title: "\u200BMariage haut de gamme à Avignon", desc: "\u200B" },
+  { src: r01, title: "Une journée gravée dans les mémoires", desc: "​Des pièces soignées, dressées avec minutie, qui racontent l'élégance d'un grand jour." },
   { src: r02, title: "Buffet méditerranéen sur mesure", desc: "Une sélection de mezze, grillades et spécialités préparée selon les envies de nos clients." },
   { src: r03, title: "Réception familiale réussie", desc: "Des moments chaleureux célébrés autour d'une cuisine généreuse et conviviale." },
-  { src: r04, title: "Saveurs de la Méditerranée", desc: "Un voyage gustatif entre traditions turques, libanaises, grecques et arméniennes." },
-  { src: r05, title: "Événement d'entreprise", desc: "Une prestation clé en main pour séminaires, lancements et cocktails professionnels." },
+  { src: r04, title: "Une ode aux horizons lointains", desc: "Un voyage entre plusieurs rives, servi en grandes tablées, fidèle aux savoir-faire d'origine." },
+  { src: r05, title: "​Le détail qui fait la différence", desc: "Une prestation pensée pour impressionner, du dressage jusqu'au dernier invité servi." },
   { src: r06, title: "Cuisine traditionnelle turque", desc: "Kebabs, pides et mezze préparés dans le plus pur respect de la tradition turque." },
   { src: r07, title: "Buffet oriental raffiné", desc: "Une présentation élégante associant saveurs orientales et finitions soignées." },
   { src: r08, title: "Réception privée élégante", desc: "Un service discret et professionnel pour des soirées intimes et mémorables." },
