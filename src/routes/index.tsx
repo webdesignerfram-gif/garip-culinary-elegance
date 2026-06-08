@@ -535,7 +535,7 @@ function Index() {
               { name: "Office du tourisme", sub: "Avignon Provence" },
               { name: "Hôtel d'Europe", sub: "5 étoiles · Avignon" },
               { name: "Palais des Papes", sub: "Monument historique" },
-              { name: "Château des Fines Roches", sub: "Réceptions & mariages" },
+              { name: "Parc des Expositions", sub: "Réceptions & mariages" },
               { name: "Château de la Barben", sub: "Événements prestige" },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 80}>
