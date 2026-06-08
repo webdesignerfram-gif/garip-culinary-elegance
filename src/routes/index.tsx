@@ -536,7 +536,7 @@ function Index() {
               { name: "Hôtel d'Europe", sub: "5 étoiles · Avignon" },
               { name: "Palais des Papes", sub: "Monument historique" },
               { name: "Parc des Expositions", sub: "événementiel et salle de congrès et d'exposition" },
-              { name: "Château de la Barben", sub: "Événements prestige" },
+              { name: "Opéra Grand Avignon", sub: "Événements prestige" },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 80}>
                 <div className="bg-background border border-border px-6 py-8 text-center transition-smooth hover:border-primary hover:shadow-soft">
