@@ -533,7 +533,7 @@ function Index() {
             {[
               { name: "Ville d'Avignon", sub: "Mairie & collectivités" },
               { name: "Office du tourisme", sub: "Avignon Provence" },
-              { name: "Préfecture de Vaucluse", sub: "5 étoiles · Avignon" },
+              { name: "Préfecture de Vaucluse", sub: "Bâtiment administratif public" },
               { name: "Palais des Papes", sub: "Monument historique" },
               { name: "Parc des Expositions", sub: "événementiel et salle de congrès et d'exposition" },
               { name: "Opéra Grand Avignon", sub: "Lieu culturel public" },
