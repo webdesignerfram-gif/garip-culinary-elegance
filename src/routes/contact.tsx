@@ -230,6 +230,31 @@ function ContactPage() {
                   <Field label="Type d'événement" name="event" placeholder="Mariage, anniversaire…" />
                   <Field label="Nombre d'invités" name="guests" type="number" placeholder="50" />
                 </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <Field label="Budget estimé (€)" name="budget" type="number" placeholder="2000" />
+                  <div>
+                    <span className="block text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2">
+                      Souhaitez-vous un service de livraison ?
+                    </span>
+                    <div className="flex gap-3">
+                      {["Oui", "Non"].map((opt) => (
+                        <label
+                          key={opt}
+                          className="flex-1 cursor-pointer bg-card border border-border px-4 py-3 text-foreground hover:border-primary transition-smooth has-[:checked]:border-primary has-[:checked]:bg-primary/5 flex items-center gap-3"
+                        >
+                          <input
+                            type="radio"
+                            name="delivery"
+                            value={opt}
+                            required
+                            className="accent-primary"
+                          />
+                          <span className="text-sm">{opt}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                </div>
                 <div>
                   <label className="block text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2">
                     Votre message
