@@ -363,19 +363,36 @@ function ServicesPage() {
                     <p className="mt-2 italic text-muted-foreground text-sm">{m.subtitle}</p>
                   </header>
 
-                  <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
-                    {m.dishes.map((d) => (
-                      <li
-                        key={d}
-                        className="flex items-baseline gap-3 py-1 group/dish hover:text-primary transition-colors"
-                      >
-                        <span className="font-display text-[15px] md:text-base text-foreground group-hover/dish:text-primary transition-colors whitespace-nowrap">
-                          {d}
-                        </span>
-                        <span className="flex-1 border-b border-dotted border-border/60 translate-y-[-4px]" />
-                      </li>
+                  <div className="mt-8 space-y-10">
+                    {([
+                      { label: "Entrées", items: m.entrees },
+                      { label: "Plats chauds", items: m.plats },
+                      { label: "Desserts", items: m.desserts },
+                    ] as const).map((section) => (
+                      <div key={section.label}>
+                        <div className="flex items-center gap-4 mb-5">
+                          <span className="h-px flex-1 bg-border" />
+                          <h4 className="text-[11px] tracking-[0.4em] uppercase text-primary font-medium whitespace-nowrap">
+                            {section.label}
+                          </h4>
+                          <span className="h-px flex-1 bg-border" />
+                        </div>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5">
+                          {section.items.map((d) => (
+                            <li
+                              key={d}
+                              className="flex items-baseline gap-3 group/dish"
+                            >
+                              <span className="font-display text-[15px] md:text-base text-foreground group-hover/dish:text-primary transition-colors whitespace-nowrap">
+                                {d}
+                              </span>
+                              <span className="flex-1 border-b border-dotted border-border/60 translate-y-[-4px]" />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </article>
               </Reveal>
             ))}
