@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, Navigation, Star, Award, Users, ShieldCheck } from "lucide-react";
+import { FormContact } from "@/components/site/FormContact";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Navigation, Star, Award, Users, ShieldCheck } from "lucide-react";
 
 const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
 const PHONE_DISPLAY = "+33 4 90 33 17 49";
