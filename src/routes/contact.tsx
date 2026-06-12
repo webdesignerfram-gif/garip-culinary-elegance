@@ -299,10 +299,10 @@ function ContactPage() {
               <div className="mt-8 pt-8 border-t border-primary-foreground/15">
                 <p className="text-xs tracking-[0.2em] uppercase text-primary-foreground/60 mb-4">Suivez-nous</p>
                 <div className="flex gap-3">
-                  <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-11 h-11 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth">
+                  <a href="https://www.facebook.com/garip.traiteur" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-11 h-11 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth">
                     <Facebook size={16} />
                   </a>
-                  <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-11 h-11 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth">
+                  <a href="https://www.instagram.com/traiteurgarip?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-11 h-11 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth">
                     <Instagram size={16} />
                   </a>
                 </div>

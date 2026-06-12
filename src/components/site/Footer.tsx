@@ -30,7 +30,7 @@ export function Footer() {
               <a href="https://www.facebook.com/garip.traiteur" aria-label="Facebook" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth hover:scale-110 active:scale-95">
                 <Facebook size={16} />
               </a>
-              <a href="https://www.instagram.com/traiteurgarip" aria-label="Instagram" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth hover:scale-110 active:scale-95">
+              <a href="https://www.instagram.com/traiteurgarip?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth hover:scale-110 active:scale-95">
                 <Instagram size={16} />
               </a>
             </div>
