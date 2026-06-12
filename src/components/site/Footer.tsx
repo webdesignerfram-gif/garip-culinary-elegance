@@ -27,10 +27,10 @@ export function Footer() {
           <div>
             <h4 className="text-xs tracking-[0.3em] uppercase text-gold">Suivez-nous</h4>
             <div className="mt-6 flex gap-3">
-              <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth">
+              <a href="https://www.facebook.com/garip.traiteur" aria-label="Facebook" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth hover:scale-110 active:scale-95">
                 <Facebook size={16} />
               </a>
-              <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth">
+              <a href="https://www.instagram.com/traiteurgarip" aria-label="Instagram" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center border border-primary-foreground/30 hover:border-gold hover:text-gold transition-smooth hover:scale-110 active:scale-95">
                 <Instagram size={16} />
               </a>
             </div>
