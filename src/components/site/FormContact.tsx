@@ -3,6 +3,8 @@ import { Send } from "lucide-react";
 
 export function FormContact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <div>
@@ -16,9 +18,28 @@ export function FormContact() {
         </div>
       ) : (
         <form
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            setSent(true);
+            setLoading(true);
+            setError(null);
+            const formData = new FormData(e.currentTarget);
+            try {
+              const res = await fetch("https://formspree.io/f/xzdqyvna", {
+                method: "POST",
+                body: formData,
+                headers: { Accept: "application/json" },
+              });
+              if (res.ok) {
+                setSent(true);
+              } else {
+                const data = await res.json().catch(() => ({}));
+                setError(data.error || "Une erreur est survenue. Veuillez réessayer.");
+              }
+            } catch {
+              setError("Une erreur est survenue. Veuillez réessayer.");
+            } finally {
+              setLoading(false);
+            }
           }}
           className="space-y-6"
         >
@@ -68,11 +89,17 @@ export function FormContact() {
               placeholder="Date, lieu, régime alimentaire, cuisine souhaitée…"
             />
           </div>
+          {error && (
+            <div className="bg-destructive/10 border border-destructive text-destructive px-4 py-3 text-sm">
+              {error}
+            </div>
+          )}
           <button
             type="submit"
-            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-accent transition-smooth shadow-elegant"
+            disabled={loading}
+            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-accent transition-smooth shadow-elegant disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Envoyer la demande
+            {loading ? "Envoi en cours…" : "Envoyer la demande"}
             <Send size={14} />
           </button>
         </form>
