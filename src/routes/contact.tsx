@@ -8,7 +8,7 @@ import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, Navigation, Star
 const ADDRESS = "22 Rue Portail Matheron, 84000 Avignon";
 const PHONE_DISPLAY = "+33 4 90 33 17 49";
 const PHONE_TEL = "+33490331749";
-const EMAIL = "garip7968@hotmail.fr";
+const EMAIL = "traiteurdescarmes@gmail.com";
 const MAPS_QUERY = encodeURIComponent("Traiteur Garip, 22 Rue Portail Matheron, 84000 Avignon");
 const MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAPS_QUERY}`;
 const MAPS_EMBED = `https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`;
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/contact")({
         description: "Traiteur méditerranéen, turc, libanais, grec et arménien à Avignon depuis 36 ans. Service traiteur halal, casher, végétarien et vegan pour mariages, événements d'entreprise et réceptions privées.",
         url: "https://traiteurdegarip.fr",
         telephone: "+33490331749",
-        email: "garip7968@hotmail.fr",
+        email: "traiteurdescarmes@gmail.com",
         image: [
           "/assets/hero-buffet.jpg",
           "/assets/gallery-mariage.jpg",
@@ -398,7 +398,7 @@ function ContactPage() {
               </p>
               <p>
                 Contactez-nous par téléphone au <strong className="text-foreground">+33 4 90 33 17 49</strong>,
-                par email à <strong className="text-foreground">garip7968@hotmail.fr</strong>,
+                par email à <strong className="text-foreground">traiteurdescarmes@gmail.com</strong>,
                 ou via notre formulaire de devis en ligne. Réponse personnalisée sous 24h ouvrées.
                 Service traiteur dans tout le Vaucluse, la Provence et la région PACA.
               </p>

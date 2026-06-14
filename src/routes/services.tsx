@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services")({
         description: "Traiteur méditerranéen, turc, libanais, grec et arménien à Avignon depuis 36 ans. Service traiteur halal, casher, végétarien et vegan pour mariages, événements d'entreprise et réceptions privées.",
         url: "https://traiteurdegarip.fr",
         telephone: "+33490331749",
-        email: "garip7968@hotmail.fr",
+        email: "traiteurdescarmes@gmail.com",
         image: [
           "/assets/hero-buffet.jpg",
           "/assets/gallery-mariage.jpg",
