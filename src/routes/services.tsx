@@ -284,13 +284,13 @@ const menus: Menu[] = [
     ],
     plats: [
       "Sou Beurek",
-      "Lyulya Kebab",
+      "Lule Kebab",
       "Grillades arméniennes",
       "Lahmacun",
       "İçli Köfte",
       "İmam Bayıldı",
     ],
-    desserts: ["Baklava arménienne", "Pilahi arménien"],
+    desserts: ["Baklava arménienne", "Pilaki arménien"],
   },
 ];
 
