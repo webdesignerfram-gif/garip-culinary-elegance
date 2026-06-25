@@ -274,7 +274,7 @@ function Index() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
         <img
-          src={heroImg.url}
+          src={heroImg}
           alt="Image principale Traiteur Garip"
           width={1920}
           height={1280}
